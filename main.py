@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Entry point: build today's strategy briefing and email it.
+"""Entry point: check the watchlist against the buy/stop-loss rules and email the result.
 
 Usage:
-    python main.py            # fetch, generate, and send the email
-    python main.py --dry-run  # fetch + generate, write HTML to out.html instead of sending
+    python main.py            # fetch, evaluate, update state, and send the email
+    python main.py --dry-run  # same, but write out.html instead of sending / doesn't require mail secrets
 """
 from __future__ import annotations
 
@@ -12,41 +12,26 @@ import datetime as dt
 import sys
 from pathlib import Path
 
-import yaml
 from anthropic import Anthropic
 
 sys.path.insert(0, str(Path(__file__).parent / "src"))
 
-from finance_yoo.briefing import generate_stock_briefing
-from finance_yoo.data import fetch_quote
+from finance_yoo.data import fetch_ticker_data
 from finance_yoo.mailer import send_html_email
-from finance_yoo.render import HoldingRow, render_email
+from finance_yoo.render import render_email
+from finance_yoo.signals import evaluate, load_state, save_state
+from finance_yoo.translate import translate_headlines
 
-CONFIG_PATH = Path(__file__).parent / "config" / "portfolio.yaml"
+WATCHLIST_PATH = Path(__file__).parent / "config" / "watchlist.txt"
 
 
-def _build_rows(entries, status, buy_line_multiplier, take_profit_growth_drop_pct, client):
-    rows = []
-    for entry in entries:
-        quote = fetch_quote(entry["ticker"], entry["name"])
-        briefing = generate_stock_briefing(
-            quote,
-            quantity=entry.get("quantity", 0),
-            avg_price=entry.get("avg_price", 0),
-            buy_line_multiplier=buy_line_multiplier,
-            take_profit_growth_drop_pct=take_profit_growth_drop_pct,
-            client=client,
-        )
-        rows.append(
-            HoldingRow(
-                quote=quote,
-                briefing=briefing,
-                quantity=entry.get("quantity", 0),
-                avg_price=entry.get("avg_price", 0),
-                status=status,
-            )
-        )
-    return rows
+def _load_watchlist() -> list[str]:
+    tickers = []
+    for line in WATCHLIST_PATH.read_text(encoding="utf-8").splitlines():
+        line = line.strip()
+        if line and not line.startswith("#"):
+            tickers.append(line.upper())
+    return tickers
 
 
 def main() -> None:
@@ -54,28 +39,32 @@ def main() -> None:
     parser.add_argument("--dry-run", action="store_true", help="Write out.html instead of sending email")
     args = parser.parse_args()
 
-    config = yaml.safe_load(CONFIG_PATH.read_text(encoding="utf-8"))
-    buy_line_multiplier = config.get("buy_line_multiplier", 0.7)
-    take_profit_growth_drop_pct = config.get("take_profit_growth_drop_pct", 20)
+    tickers = _load_watchlist()
+    if not tickers:
+        print("config/watchlist.txt에 티커가 없습니다.")
+        return
 
     client = Anthropic()
+    state = load_state()
 
-    domestic_rows = _build_rows(
-        config["holdings"].get("domestic", []), "보유", buy_line_multiplier, take_profit_growth_drop_pct, client
-    )
-    overseas_rows = _build_rows(
-        config["holdings"].get("overseas", []), "보유", buy_line_multiplier, take_profit_growth_drop_pct, client
-    )
-    watchlist_rows = _build_rows(
-        config.get("watchlist", []), "매수 후보", buy_line_multiplier, take_profit_growth_drop_pct, client
-    )
+    tickers_data, statuses, news_kr = {}, {}, {}
+    for ticker in tickers:
+        try:
+            data = fetch_ticker_data(ticker)
+        except Exception as e:
+            print(f"{ticker} 데이터 조회 실패, 건너뜁니다: {e}")
+            continue
+        tickers_data[ticker] = data
+        statuses[ticker] = evaluate(ticker, data, state)
+        news_kr[ticker] = translate_headlines([n.title_en for n in data.news], client=client)
 
-    html = render_email(
-        investor_name=config.get("investor_name", "투자자"),
-        strategy_tagline=config.get("strategy_tagline", ""),
-        domestic_rows=domestic_rows + [r for r in watchlist_rows if r.quote.ticker.upper().endswith((".KS", ".KQ"))],
-        overseas_rows=[r for r in overseas_rows + watchlist_rows if not r.quote.ticker.upper().endswith((".KS", ".KQ"))],
-    )
+    save_state(state)
+
+    if not tickers_data:
+        print("가져올 수 있는 종목 데이터가 없어 종료합니다.")
+        return
+
+    html = render_email(tickers_data=tickers_data, statuses=statuses, news_kr=news_kr)
 
     if args.dry_run:
         out_path = Path("out.html")
@@ -84,8 +73,7 @@ def main() -> None:
         return
 
     today_str = dt.datetime.now().strftime("%Y-%m-%d")
-    subject = f"[전략 브리핑] {today_str} {config.get('investor_name', '')}님 포트폴리오"
-    send_html_email(subject, html)
+    send_html_email(f"[매수 신호 체크] {today_str} 관심종목 브리핑", html)
     print("Sent briefing email.")
 
 

@@ -1,10 +1,13 @@
-name: Daily Strategy Briefing
+name: Daily Watchlist Briefing
 
 on:
   schedule:
     # 22:00 UTC = 07:00 KST (한국은 서머타임 없음)
     - cron: "0 22 * * *"
   workflow_dispatch: {}
+
+permissions:
+  contents: write
 
 jobs:
   send-briefing:
@@ -25,3 +28,11 @@ jobs:
           MAIL_FROM_APP_PASSWORD: ${{ secrets.MAIL_FROM_APP_PASSWORD }}
           MAIL_TO: ${{ secrets.MAIL_TO }}
         run: python main.py
+
+      - name: Commit updated signal state
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add state/signals.json
+          git diff --cached --quiet || git commit -m "Update signal state [skip ci]"
+          git push
