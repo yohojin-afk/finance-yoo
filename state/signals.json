@@ -82,5 +82,95 @@
       "stop_loss_price": 59.04900054931641,
       "stop_loss_triggered": false
     }
+  },
+  "TQQQ": {
+    "stage2": {
+      "active": false,
+      "days_done": 0
+    },
+    "stage3": {
+      "active": false,
+      "days_done": 0
+    },
+    "stage4": {
+      "active": false,
+      "days_done": 0
+    },
+    "stage3_completed_before": false,
+    "last_processed_date": "2026-07-24",
+    "last_status": {
+      "alerts": [],
+      "stop_loss_price": 59.670002746582036,
+      "stop_loss_triggered": false
+    }
+  },
+  "SOXL": {
+    "stage2": {
+      "active": false,
+      "days_done": 0
+    },
+    "stage3": {
+      "active": false,
+      "days_done": 0
+    },
+    "stage4": {
+      "active": false,
+      "days_done": 0
+    },
+    "stage3_completed_before": false,
+    "last_processed_date": "2026-07-24",
+    "last_status": {
+      "alerts": [
+        {
+          "stage": "stop_loss",
+          "headline": "손절 신호 — 전일 대비 -10% 이상 하락",
+          "detail": "전일 종가 $157.50 → 오늘 종가 $136.81 (-13.1%)."
+        }
+      ],
+      "stop_loss_price": 141.75,
+      "stop_loss_triggered": true
+    }
+  },
+  "UPRO": {
+    "stage2": {
+      "active": false,
+      "days_done": 0
+    },
+    "stage3": {
+      "active": false,
+      "days_done": 0
+    },
+    "stage4": {
+      "active": false,
+      "days_done": 0
+    },
+    "stage3_completed_before": false,
+    "last_processed_date": "2026-07-24",
+    "last_status": {
+      "alerts": [],
+      "stop_loss_price": 122.51700439453126,
+      "stop_loss_triggered": false
+    }
+  },
+  "TSLA": {
+    "stage2": {
+      "active": false,
+      "days_done": 0
+    },
+    "stage3": {
+      "active": false,
+      "days_done": 0
+    },
+    "stage4": {
+      "active": false,
+      "days_done": 0
+    },
+    "stage3_completed_before": false,
+    "last_processed_date": "2026-07-24",
+    "last_status": {
+      "alerts": [],
+      "stop_loss_price": 287.72100219726565,
+      "stop_loss_triggered": false
+    }
   }
 }
