@@ -40,9 +40,11 @@ def _trade_form_html(ticker: str) -> str:
     return f"""
       <div style="margin-top:10px;padding-top:10px;border-top:1px dashed #eee;display:flex;gap:6px;flex-wrap:wrap;align-items:center;">
         <input type="date" id="trade-date-{ticker}" class="fy-trade-date" style="padding:6px 8px;border:1px solid #ddd;border-radius:6px;font-size:12px;">
-        <input type="number" id="trade-price-{ticker}" placeholder="매수가" step="0.01" style="width:80px;padding:6px 8px;border:1px solid #ddd;border-radius:6px;font-size:12px;">
+        <input type="number" id="trade-price-{ticker}" placeholder="가격" step="0.01" style="width:80px;padding:6px 8px;border:1px solid #ddd;border-radius:6px;font-size:12px;">
         <input type="number" id="trade-qty-{ticker}" placeholder="수량" step="any" style="width:70px;padding:6px 8px;border:1px solid #ddd;border-radius:6px;font-size:12px;">
         <button onclick="fyAddTrade('{ticker}')" style="padding:6px 12px;border:none;border-radius:6px;background:#7c3aed;color:#fff;font-size:12px;cursor:pointer;">매수 기록</button>
+        <button onclick="fySellTrade('{ticker}')" style="padding:6px 12px;border:none;border-radius:6px;background:#d64545;color:#fff;font-size:12px;cursor:pointer;">매도 기록</button>
+        <button onclick="fyResetPosition('{ticker}')" style="padding:6px 12px;border:1px solid #ddd;border-radius:6px;background:#fff;color:#888;font-size:12px;cursor:pointer;">보유 초기화</button>
       </div>
       <div id="trade-status-{ticker}" style="margin-top:4px;font-size:11px;color:#888;"></div>
     """

@@ -227,31 +227,17 @@ WATCHLIST_MANAGER_HTML = """
     dateInputs[i].valueAsDate = new Date();
   }
 
-  window.fyAddTrade = function (ticker) {
-    var dateEl = document.getElementById("trade-date-" + ticker);
-    var priceEl = document.getElementById("trade-price-" + ticker);
-    var qtyEl = document.getElementById("trade-qty-" + ticker);
-    var statusEl = document.getElementById("trade-status-" + ticker);
-    var price = parseFloat(priceEl.value);
-    var qty = parseFloat(qtyEl.value);
-    var date = dateEl.value;
-
+  function mutateTrades(ticker, statusEl, mutator, commitMessage) {
     if (!getToken()) {
       statusEl.textContent = "먼저 위에서 GitHub 토큰을 저장하세요.";
       statusEl.style.color = "#d64545";
-      return;
+      return Promise.resolve();
     }
-    if (!date || !(price > 0) || !(qty > 0)) {
-      statusEl.textContent = "날짜/매수가/수량을 확인하세요.";
-      statusEl.style.color = "#d64545";
-      return;
-    }
-
     statusEl.textContent = "저장 중...";
     statusEl.style.color = "#888";
 
     var branchName = null;
-    getDefaultBranch().then(function (branch) {
+    return getDefaultBranch().then(function (branch) {
       branchName = branch;
       return ghFetch("/repos/" + OWNER + "/" + REPO + "/contents/" + TRADES_PATH + "?ref=" + branch);
     }).then(function (res) {
@@ -264,12 +250,11 @@ WATCHLIST_MANAGER_HTML = """
       } catch (e) {
         trades = {};
       }
-      if (!trades[ticker]) trades[ticker] = [];
-      trades[ticker].push({ date: date, price: price, quantity: qty });
+      mutator(trades);
       return ghFetch("/repos/" + OWNER + "/" + REPO + "/contents/" + TRADES_PATH, {
         method: "PUT",
         body: JSON.stringify({
-          message: "Record trade: " + ticker + " " + qty + "@" + price,
+          message: commitMessage,
           content: b64EncodeUnicode(JSON.stringify(trades, null, 2)),
           sha: data.sha,
           branch: branchName,
@@ -281,14 +266,53 @@ WATCHLIST_MANAGER_HTML = """
           throw new Error("저장 실패: " + (err.message || res.status));
         });
       }
-      statusEl.textContent = "기록 완료. 평단가는 다음 갱신에 반영됩니다 (몇 분 소요)...";
+      statusEl.textContent = "저장됨. 반영 중...";
       statusEl.style.color = "#888";
-      priceEl.value = "";
-      qtyEl.value = "";
       return triggerRun();
     }).catch(function (e) {
       statusEl.textContent = e.message;
       statusEl.style.color = "#d64545";
+    });
+  }
+
+  function recordTrade(ticker, kind) {
+    var dateEl = document.getElementById("trade-date-" + ticker);
+    var priceEl = document.getElementById("trade-price-" + ticker);
+    var qtyEl = document.getElementById("trade-qty-" + ticker);
+    var statusEl = document.getElementById("trade-status-" + ticker);
+    var price = parseFloat(priceEl.value);
+    var qty = parseFloat(qtyEl.value);
+    var date = dateEl.value;
+
+    if (!date || !(price > 0) || !(qty > 0)) {
+      statusEl.textContent = "날짜/가격/수량을 확인하세요.";
+      statusEl.style.color = "#d64545";
+      return;
+    }
+
+    var label = kind === "sell" ? "Record sell" : "Record buy";
+    mutateTrades(ticker, statusEl, function (trades) {
+      if (!trades[ticker]) trades[ticker] = [];
+      var entry = { date: date, price: price, quantity: qty };
+      if (kind === "sell") entry.type = "sell";
+      trades[ticker].push(entry);
+    }, label + ": " + ticker + " " + qty + "@" + price).then(function () {
+      priceEl.value = "";
+      qtyEl.value = "";
+      statusEl.textContent = "기록 완료. 평단가는 다음 갱신에 반영됩니다 (몇 분 소요)...";
+    });
+  }
+
+  window.fyAddTrade = function (ticker) { recordTrade(ticker, "buy"); };
+  window.fySellTrade = function (ticker) { recordTrade(ticker, "sell"); };
+
+  window.fyResetPosition = function (ticker) {
+    var statusEl = document.getElementById("trade-status-" + ticker);
+    if (!window.confirm(ticker + "의 매수/매도 기록을 모두 지울까요? 되돌릴 수 없습니다.")) return;
+    mutateTrades(ticker, statusEl, function (trades) {
+      delete trades[ticker];
+    }, "Reset position: " + ticker).then(function () {
+      statusEl.textContent = "초기화 완료. 다음 갱신에 반영됩니다 (몇 분 소요)...";
     });
   };
 })();
