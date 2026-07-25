@@ -4,7 +4,12 @@ on:
   schedule:
     # 22:00 UTC = 07:00 KST (한국은 서머타임 없음)
     - cron: "0 22 * * *"
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "true면 메일 발송 대신 out.html을 아티팩트로 생성 (메일 시크릿 없이도 테스트 가능)"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -21,7 +26,21 @@ jobs:
 
       - run: pip install -r requirements.txt
 
+      - name: Generate briefing (dry run)
+        if: ${{ inputs.dry_run }}
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python main.py --dry-run
+
+      - name: Upload dry-run HTML
+        if: ${{ inputs.dry_run }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: briefing-preview
+          path: out.html
+
       - name: Generate and send briefing
+        if: ${{ !inputs.dry_run }}
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           MAIL_FROM_ADDRESS: ${{ secrets.MAIL_FROM_ADDRESS }}

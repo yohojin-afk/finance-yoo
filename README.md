@@ -56,6 +56,11 @@ export한 뒤 `--dry-run` 없이 실행하세요.
 
 GitHub Actions에서 스케줄을 기다리지 않고 바로 테스트하려면 저장소의
 **Actions → Daily Watchlist Briefing → Run workflow**로 수동 실행할 수 있습니다.
+이때 `dry_run` 체크박스를 켜면 메일을 보내지 않고 `out.html`을 아티팩트로 만들어주므로,
+`MAIL_FROM_ADDRESS`/`MAIL_FROM_APP_PASSWORD`/`MAIL_TO` 시크릿 없이 `ANTHROPIC_API_KEY`만
+있어도(그마저 없어도 뉴스가 영문으로 나올 뿐 동작은 함) 실행 결과를 미리 확인할 수
+있습니다. 실행이 끝나면 해당 워크플로우 run 페이지 하단의 Artifacts에서
+`briefing-preview`를 내려받아 `out.html`을 브라우저로 열어보세요.
 
 ## 알아두면 좋은 점
 

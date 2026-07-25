@@ -44,7 +44,11 @@ def main() -> None:
         print("config/watchlist.txt에 티커가 없습니다.")
         return
 
-    client = Anthropic()
+    try:
+        client = Anthropic()
+    except Exception:
+        print("ANTHROPIC_API_KEY가 없어 뉴스는 영문 원문으로 표시합니다.")
+        client = None
     state = load_state()
 
     tickers_data, statuses, news_kr = {}, {}, {}
@@ -56,7 +60,11 @@ def main() -> None:
             continue
         tickers_data[ticker] = data
         statuses[ticker] = evaluate(ticker, data, state)
-        news_kr[ticker] = translate_headlines([n.title_en for n in data.news], client=client)
+        news_kr[ticker] = (
+            translate_headlines([n.title_en for n in data.news], client=client)
+            if client
+            else [n.title_en for n in data.news]
+        )
 
     save_state(state)
 
