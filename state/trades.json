@@ -4,6 +4,12 @@
       "date": "2026-07-24",
       "price": 2.0874,
       "quantity": 25274
+    },
+    {
+      "date": "2026-07-25",
+      "price": 4,
+      "quantity": 4,
+      "type": "sell"
     }
   ]
 }
