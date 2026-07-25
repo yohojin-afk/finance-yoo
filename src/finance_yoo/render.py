@@ -103,8 +103,9 @@ def render_email(
     positions: dict[str, Position | None] | None = None,
 ) -> str:
     positions = positions or {}
-    today = dt.datetime.now()
-    date_str = f"{today.year}년 {today.month}월 {today.day}일 ({_WEEKDAYS_KR[today.weekday()]}요일)"
+    now_kst = dt.datetime.utcnow() + dt.timedelta(hours=9)
+    date_str = f"{now_kst.year}년 {now_kst.month}월 {now_kst.day}일 ({_WEEKDAYS_KR[now_kst.weekday()]}요일)"
+    time_str = now_kst.strftime("%H:%M")
     cards_html = "".join(
         _ticker_card(ticker, tickers_data[ticker], statuses[ticker], news_kr.get(ticker, []), positions.get(ticker))
         for ticker in tickers_data
@@ -114,7 +115,12 @@ def render_email(
   <div style="background:linear-gradient(135deg,#7c3aed,#a855f7);padding:28px 28px 24px;color:#fff;border-radius:12px 12px 0 0;">
     <div style="font-size:12px;letter-spacing:2px;opacity:.85;">DAILY WATCHLIST BRIEFING</div>
     <div style="font-size:24px;font-weight:800;margin-top:6px;">오늘의 매수 신호 체크</div>
-    <div style="font-size:13px;opacity:.9;margin-top:4px;">{date_str}</div>
+    <div style="font-size:13px;opacity:.9;margin-top:4px;">{date_str} · {time_str} 기준(KST)</div>
+    <div style="display:flex;align-items:center;gap:8px;margin-top:12px;flex-wrap:wrap;">
+      <button onclick="fyHardRefresh()" style="padding:6px 12px;border:none;border-radius:6px;background:rgba(255,255,255,.25);color:#fff;font-size:12px;cursor:pointer;">🔄 캐시 무시 새로고침</button>
+      <button onclick="fyRebuildNow()" style="padding:6px 12px;border:none;border-radius:6px;background:rgba(255,255,255,.25);color:#fff;font-size:12px;cursor:pointer;">⟳ 지금 다시 빌드</button>
+      <span id="refresh-status" style="font-size:11px;opacity:.85;"></span>
+    </div>
   </div>
   <div style="padding:24px 16px;">
     {cards_html}
@@ -128,6 +134,9 @@ _PAGE_TEMPLATE = """<!doctype html>
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
 <title>오늘의 매수 신호 체크</title>
 </head>
 <body style="margin:0;background:#f6f6f8;">

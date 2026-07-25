@@ -156,7 +156,27 @@ WATCHLIST_MANAGER_HTML = """
     });
   }
 
+  var autoRefreshInterval = null;
+
+  function scheduleAutoRefresh(seconds) {
+    var statusEl = document.getElementById("refresh-status");
+    if (!statusEl) return;
+    if (autoRefreshInterval) clearInterval(autoRefreshInterval);
+    var remaining = seconds;
+    statusEl.textContent = remaining + "초 후 자동 새로고침...";
+    autoRefreshInterval = setInterval(function () {
+      remaining -= 1;
+      if (remaining <= 0) {
+        clearInterval(autoRefreshInterval);
+        window.fyHardRefresh();
+        return;
+      }
+      statusEl.textContent = remaining + "초 후 자동 새로고침...";
+    }, 1000);
+  }
+
   function triggerRun() {
+    scheduleAutoRefresh(75);
     return getDefaultBranch().then(function (branch) {
       return ghFetch("/repos/" + OWNER + "/" + REPO + "/actions/workflows/" + WORKFLOW_FILE + "/dispatches", {
         method: "POST",
@@ -314,6 +334,20 @@ WATCHLIST_MANAGER_HTML = """
     }, "Reset position: " + ticker).then(function () {
       statusEl.textContent = "초기화 완료. 다음 갱신에 반영됩니다 (몇 분 소요)...";
     });
+  };
+
+  window.fyHardRefresh = function () {
+    window.location.href = window.location.pathname + "?_=" + Date.now();
+  };
+
+  window.fyRebuildNow = function () {
+    var statusEl = document.getElementById("refresh-status");
+    if (!getToken()) {
+      if (statusEl) statusEl.textContent = "토큰을 저장하면 지금 바로 재빌드를 요청할 수 있어요.";
+      return;
+    }
+    if (statusEl) statusEl.textContent = "재빌드 요청 중...";
+    triggerRun();
   };
 })();
 </script>
