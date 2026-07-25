@@ -18,6 +18,7 @@ sys.path.insert(0, str(Path(__file__).parent / "src"))
 from finance_yoo.data import fetch_ticker_data
 from finance_yoo.render import render_email, render_page
 from finance_yoo.signals import evaluate, load_state, save_state
+from finance_yoo.trades import compute_position, load_trades
 from finance_yoo.translate import translate_headlines
 
 WATCHLIST_PATH = Path(__file__).parent / "config" / "watchlist.txt"
@@ -49,8 +50,9 @@ def main() -> None:
         print("ANTHROPIC_API_KEY가 없어 뉴스는 영문 원문으로 표시합니다.")
         client = None
     state = load_state()
+    trades = load_trades()
 
-    tickers_data, statuses, news_kr = {}, {}, {}
+    tickers_data, statuses, news_kr, positions = {}, {}, {}, {}
     for ticker in tickers:
         try:
             data = fetch_ticker_data(ticker)
@@ -59,6 +61,7 @@ def main() -> None:
             continue
         tickers_data[ticker] = data
         statuses[ticker] = evaluate(ticker, data, state)
+        positions[ticker] = compute_position(trades.get(ticker, []))
         news_kr[ticker] = (
             translate_headlines([n.title_en for n in data.news], client=client)
             if client
@@ -69,7 +72,9 @@ def main() -> None:
         print("가져올 수 있는 종목 데이터가 없어 종료합니다.")
         return
 
-    page_html = render_page(render_email(tickers_data=tickers_data, statuses=statuses, news_kr=news_kr))
+    page_html = render_page(
+        render_email(tickers_data=tickers_data, statuses=statuses, news_kr=news_kr, positions=positions)
+    )
 
     if args.dry_run:
         out_path = Path("out.html")

@@ -34,6 +34,7 @@ WATCHLIST_MANAGER_HTML = """
   var OWNER = "yohojin-afk";
   var REPO = "finance-yoo";
   var PATH = "config/watchlist.txt";
+  var TRADES_PATH = "state/trades.json";
   var WORKFLOW_FILE = "daily-briefing.yml";
   var API = "https://api.github.com";
   var TOKEN_KEY = "fy_gh_token";
@@ -220,6 +221,76 @@ WATCHLIST_MANAGER_HTML = """
   } else {
     setStatus("GitHub 토큰을 입력하고 저장하면 종목을 관리할 수 있습니다.");
   }
+
+  var dateInputs = document.querySelectorAll(".fy-trade-date");
+  for (var i = 0; i < dateInputs.length; i++) {
+    dateInputs[i].valueAsDate = new Date();
+  }
+
+  window.fyAddTrade = function (ticker) {
+    var dateEl = document.getElementById("trade-date-" + ticker);
+    var priceEl = document.getElementById("trade-price-" + ticker);
+    var qtyEl = document.getElementById("trade-qty-" + ticker);
+    var statusEl = document.getElementById("trade-status-" + ticker);
+    var price = parseFloat(priceEl.value);
+    var qty = parseFloat(qtyEl.value);
+    var date = dateEl.value;
+
+    if (!getToken()) {
+      statusEl.textContent = "먼저 위에서 GitHub 토큰을 저장하세요.";
+      statusEl.style.color = "#d64545";
+      return;
+    }
+    if (!date || !(price > 0) || !(qty > 0)) {
+      statusEl.textContent = "날짜/매수가/수량을 확인하세요.";
+      statusEl.style.color = "#d64545";
+      return;
+    }
+
+    statusEl.textContent = "저장 중...";
+    statusEl.style.color = "#888";
+
+    var branchName = null;
+    getDefaultBranch().then(function (branch) {
+      branchName = branch;
+      return ghFetch("/repos/" + OWNER + "/" + REPO + "/contents/" + TRADES_PATH + "?ref=" + branch);
+    }).then(function (res) {
+      if (!res.ok) throw new Error("불러오기 실패 (" + res.status + ")");
+      return res.json();
+    }).then(function (data) {
+      var trades = {};
+      try {
+        trades = JSON.parse(b64DecodeUnicode(data.content) || "{}");
+      } catch (e) {
+        trades = {};
+      }
+      if (!trades[ticker]) trades[ticker] = [];
+      trades[ticker].push({ date: date, price: price, quantity: qty });
+      return ghFetch("/repos/" + OWNER + "/" + REPO + "/contents/" + TRADES_PATH, {
+        method: "PUT",
+        body: JSON.stringify({
+          message: "Record trade: " + ticker + " " + qty + "@" + price,
+          content: b64EncodeUnicode(JSON.stringify(trades, null, 2)),
+          sha: data.sha,
+          branch: branchName,
+        }),
+      });
+    }).then(function (res) {
+      if (!res.ok) {
+        return res.json().catch(function () { return {}; }).then(function (err) {
+          throw new Error("저장 실패: " + (err.message || res.status));
+        });
+      }
+      statusEl.textContent = "기록 완료. 평단가는 다음 갱신에 반영됩니다 (몇 분 소요)...";
+      statusEl.style.color = "#888";
+      priceEl.value = "";
+      qtyEl.value = "";
+      return triggerRun();
+    }).catch(function (e) {
+      statusEl.textContent = e.message;
+      statusEl.style.color = "#d64545";
+    });
+  };
 })();
 </script>
 """

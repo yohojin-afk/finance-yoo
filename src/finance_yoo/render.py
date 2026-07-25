@@ -5,6 +5,7 @@ import datetime as dt
 
 from .data import TickerData
 from .signals import TickerStatus
+from .trades import Position
 from .watchlist_manager_ui import WATCHLIST_MANAGER_HTML
 
 _WEEKDAYS_KR = ["월", "화", "수", "목", "금", "토", "일"]
@@ -21,7 +22,33 @@ def _dist(price: float, ma: float) -> str:
     return _pct((price / ma - 1) * 100)
 
 
-def _ticker_card(ticker: str, data: TickerData, status: TickerStatus, news_kr: list[str]) -> str:
+def _position_html(ticker: str, position: Position | None, current_price: float) -> str:
+    if position is None:
+        return ""
+    pl_pct = (current_price / position.avg_price - 1) * 100
+    pl_color = "#1a9e5c" if pl_pct >= 0 else "#d64545"
+    pl_sign = "+" if pl_pct >= 0 else ""
+    return (
+        '<div style="margin-top:8px;font-size:12px;color:#666;">'
+        f"평단가 ${position.avg_price:,.2f} · 보유 {position.quantity:g}주 · "
+        f'평가손익 <span style="color:{pl_color};font-weight:600;">{pl_sign}{pl_pct:.2f}%</span>'
+        "</div>"
+    )
+
+
+def _trade_form_html(ticker: str) -> str:
+    return f"""
+      <div style="margin-top:10px;padding-top:10px;border-top:1px dashed #eee;display:flex;gap:6px;flex-wrap:wrap;align-items:center;">
+        <input type="date" id="trade-date-{ticker}" class="fy-trade-date" style="padding:6px 8px;border:1px solid #ddd;border-radius:6px;font-size:12px;">
+        <input type="number" id="trade-price-{ticker}" placeholder="매수가" step="0.01" style="width:80px;padding:6px 8px;border:1px solid #ddd;border-radius:6px;font-size:12px;">
+        <input type="number" id="trade-qty-{ticker}" placeholder="수량" step="any" style="width:70px;padding:6px 8px;border:1px solid #ddd;border-radius:6px;font-size:12px;">
+        <button onclick="fyAddTrade('{ticker}')" style="padding:6px 12px;border:none;border-radius:6px;background:#7c3aed;color:#fff;font-size:12px;cursor:pointer;">매수 기록</button>
+      </div>
+      <div id="trade-status-{ticker}" style="margin-top:4px;font-size:11px;color:#888;"></div>
+    """
+
+
+def _ticker_card(ticker: str, data: TickerData, status: TickerStatus, news_kr: list[str], position: Position | None) -> str:
     last, prev = data.history.iloc[-1], data.history.iloc[-2]
     change_pct = (last.Close / prev.Close - 1) * 100 if prev.Close else 0
     color = "#1a9e5c" if change_pct >= 0 else "#d64545"
@@ -29,6 +56,8 @@ def _ticker_card(ticker: str, data: TickerData, status: TickerStatus, news_kr: l
     vol_ratio = (last.Volume / last.avg_volume20) if last.avg_volume20 == last.avg_volume20 and last.avg_volume20 else None
     rsi_txt = f"{last.rsi14:.1f}" if last.rsi14 == last.rsi14 else "N/A"
     stop_loss_txt = f"${status.stop_loss_price:,.2f}" if status.stop_loss_price else "N/A"
+    position_html = _position_html(ticker, position, last.Close)
+    trade_form_html = _trade_form_html(ticker)
 
     alerts_html = "".join(
         f'<div style="margin-top:8px;background:#faf8ff;border-left:3px solid #7c3aed;'
@@ -57,16 +86,25 @@ def _ticker_card(ticker: str, data: TickerData, status: TickerStatus, news_kr: l
       </div>
       {alerts_html}
       <div style="margin-top:10px;font-size:12px;color:#888;">오늘 기준 손절가(전일 종가 대비 -10%): {stop_loss_txt}</div>
+      {position_html}
       <div style="margin-top:10px;font-size:12px;color:#666;"><b>뉴스</b><ul style="margin:4px 0 0 18px;padding:0;">{news_html}</ul></div>
+      {trade_form_html}
     </div>
     """
 
 
-def render_email(*, tickers_data: dict[str, TickerData], statuses: dict[str, TickerStatus], news_kr: dict[str, list[str]]) -> str:
+def render_email(
+    *,
+    tickers_data: dict[str, TickerData],
+    statuses: dict[str, TickerStatus],
+    news_kr: dict[str, list[str]],
+    positions: dict[str, Position | None] | None = None,
+) -> str:
+    positions = positions or {}
     today = dt.datetime.now()
     date_str = f"{today.year}년 {today.month}월 {today.day}일 ({_WEEKDAYS_KR[today.weekday()]}요일)"
     cards_html = "".join(
-        _ticker_card(ticker, tickers_data[ticker], statuses[ticker], news_kr.get(ticker, []))
+        _ticker_card(ticker, tickers_data[ticker], statuses[ticker], news_kr.get(ticker, []), positions.get(ticker))
         for ticker in tickers_data
     )
     return f"""\
