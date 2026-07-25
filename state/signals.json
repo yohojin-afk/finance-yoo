@@ -172,5 +172,26 @@
       "stop_loss_price": 287.72100219726565,
       "stop_loss_triggered": false
     }
+  },
+  "CMPX": {
+    "stage2": {
+      "active": false,
+      "days_done": 0
+    },
+    "stage3": {
+      "active": false,
+      "days_done": 0
+    },
+    "stage4": {
+      "active": false,
+      "days_done": 0
+    },
+    "stage3_completed_before": false,
+    "last_processed_date": "2026-07-24",
+    "last_status": {
+      "alerts": [],
+      "stop_loss_price": 1.907999897003174,
+      "stop_loss_triggered": false
+    }
   }
 }
