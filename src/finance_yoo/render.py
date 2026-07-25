@@ -5,6 +5,7 @@ import datetime as dt
 
 from .data import TickerData
 from .signals import TickerStatus
+from .watchlist_manager_ui import WATCHLIST_MANAGER_HTML
 
 _WEEKDAYS_KR = ["월", "화", "수", "목", "금", "토", "일"]
 
@@ -82,9 +83,7 @@ def render_email(*, tickers_data: dict[str, TickerData], statuses: dict[str, Tic
 """
 
 
-def render_page(content_html: str) -> str:
-    """Wrap the rendered content as a standalone HTML page for GitHub Pages."""
-    return f"""<!doctype html>
+_PAGE_TEMPLATE = """<!doctype html>
 <html lang="ko">
 <head>
 <meta charset="utf-8" />
@@ -92,7 +91,17 @@ def render_page(content_html: str) -> str:
 <title>오늘의 매수 신호 체크</title>
 </head>
 <body style="margin:0;background:#f6f6f8;">
-{content_html}
+__CONTENT__
+__WATCHLIST_MANAGER__
 </body>
 </html>
 """
+
+
+def render_page(content_html: str) -> str:
+    """Wrap the rendered content + the watchlist-manager widget as a standalone page."""
+    return (
+        _PAGE_TEMPLATE
+        .replace("__CONTENT__", content_html)
+        .replace("__WATCHLIST_MANAGER__", WATCHLIST_MANAGER_HTML)
+    )
