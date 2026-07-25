@@ -1,0 +1,27 @@
+name: Daily Strategy Briefing
+
+on:
+  schedule:
+    # 22:00 UTC = 07:00 KST (한국은 서머타임 없음)
+    - cron: "0 22 * * *"
+  workflow_dispatch: {}
+
+jobs:
+  send-briefing:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - run: pip install -r requirements.txt
+
+      - name: Generate and send briefing
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          MAIL_FROM_ADDRESS: ${{ secrets.MAIL_FROM_ADDRESS }}
+          MAIL_FROM_APP_PASSWORD: ${{ secrets.MAIL_FROM_APP_PASSWORD }}
+          MAIL_TO: ${{ secrets.MAIL_TO }}
+        run: python main.py
