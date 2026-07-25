@@ -1,15 +1,14 @@
 #!/usr/bin/env python3
-"""Entry point: check the watchlist against the buy/stop-loss rules and email the result.
+"""Entry point: check the watchlist against the buy/stop-loss rules and build the dashboard page.
 
 Usage:
-    python main.py            # fetch, evaluate, update state, and send the email
-    python main.py --dry-run  # same, but write out.html instead of sending / doesn't require mail secrets
+    python main.py            # fetch, evaluate, update state, write public/index.html
+    python main.py --dry-run  # same, but write out.html locally without touching public/ or state
 """
 from __future__ import annotations
 
-import argparse
-import datetime as dt
 import sys
+import argparse
 from pathlib import Path
 
 from anthropic import Anthropic
@@ -17,12 +16,12 @@ from anthropic import Anthropic
 sys.path.insert(0, str(Path(__file__).parent / "src"))
 
 from finance_yoo.data import fetch_ticker_data
-from finance_yoo.mailer import send_html_email
-from finance_yoo.render import render_email
+from finance_yoo.render import render_email, render_page
 from finance_yoo.signals import evaluate, load_state, save_state
 from finance_yoo.translate import translate_headlines
 
 WATCHLIST_PATH = Path(__file__).parent / "config" / "watchlist.txt"
+PUBLIC_DIR = Path(__file__).parent / "public"
 
 
 def _load_watchlist() -> list[str]:
@@ -36,7 +35,7 @@ def _load_watchlist() -> list[str]:
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--dry-run", action="store_true", help="Write out.html instead of sending email")
+    parser.add_argument("--dry-run", action="store_true", help="Write out.html instead of public/index.html")
     args = parser.parse_args()
 
     tickers = _load_watchlist()
@@ -66,23 +65,22 @@ def main() -> None:
             else [n.title_en for n in data.news]
         )
 
-    save_state(state)
-
     if not tickers_data:
         print("가져올 수 있는 종목 데이터가 없어 종료합니다.")
         return
 
-    html = render_email(tickers_data=tickers_data, statuses=statuses, news_kr=news_kr)
+    page_html = render_page(render_email(tickers_data=tickers_data, statuses=statuses, news_kr=news_kr))
 
     if args.dry_run:
         out_path = Path("out.html")
-        out_path.write_text(html, encoding="utf-8")
-        print(f"Wrote {out_path.resolve()}")
+        out_path.write_text(page_html, encoding="utf-8")
+        print(f"Wrote {out_path.resolve()} (state not saved in --dry-run)")
         return
 
-    today_str = dt.datetime.now().strftime("%Y-%m-%d")
-    send_html_email(f"[매수 신호 체크] {today_str} 관심종목 브리핑", html)
-    print("Sent briefing email.")
+    save_state(state)
+    PUBLIC_DIR.mkdir(exist_ok=True)
+    (PUBLIC_DIR / "index.html").write_text(page_html, encoding="utf-8")
+    print(f"Wrote {PUBLIC_DIR / 'index.html'}")
 
 
 if __name__ == "__main__":

@@ -1,4 +1,4 @@
-name: Daily Watchlist Briefing
+name: Daily Watchlist Dashboard
 
 on:
   schedule:
@@ -7,16 +7,25 @@ on:
   workflow_dispatch:
     inputs:
       dry_run:
-        description: "true면 메일 발송 대신 out.html을 아티팩트로 생성 (메일 시크릿 없이도 테스트 가능)"
+        description: "true면 배포 없이 out.html 아티팩트만 생성 (테스트용, state 변경 없음)"
         type: boolean
         default: false
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
 jobs:
-  send-briefing:
+  build-and-deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
 
@@ -26,32 +35,41 @@ jobs:
 
       - run: pip install -r requirements.txt
 
-      - name: Generate briefing (dry run)
+      - name: Build dashboard (dry run preview)
         if: ${{ inputs.dry_run }}
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: python main.py --dry-run
 
-      - name: Upload dry-run HTML
+      - name: Upload dry-run preview
         if: ${{ inputs.dry_run }}
         uses: actions/upload-artifact@v4
         with:
-          name: briefing-preview
+          name: dashboard-preview
           path: out.html
 
-      - name: Generate and send briefing
+      - name: Build dashboard
         if: ${{ !inputs.dry_run }}
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          MAIL_FROM_ADDRESS: ${{ secrets.MAIL_FROM_ADDRESS }}
-          MAIL_FROM_APP_PASSWORD: ${{ secrets.MAIL_FROM_APP_PASSWORD }}
-          MAIL_TO: ${{ secrets.MAIL_TO }}
         run: python main.py
 
       - name: Commit updated signal state
+        if: ${{ !inputs.dry_run }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add state/signals.json
           git diff --cached --quiet || git commit -m "Update signal state [skip ci]"
           git push
+
+      - name: Upload Pages artifact
+        if: ${{ !inputs.dry_run }}
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+
+      - name: Deploy to GitHub Pages
+        if: ${{ !inputs.dry_run }}
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -69,6 +69,20 @@ def evaluate(ticker: str, data: TickerData, state: dict) -> TickerStatus:
     hist = data.history
     last, prev = hist.iloc[-1], hist.iloc[-2]
     ts = state.setdefault(ticker, _blank_ticker_state())
+    last_date = str(last.name.date()) if hasattr(last.name, "date") else str(last.name)
+
+    if ts.get("last_processed_date") == last_date:
+        # Same trading day already advanced the tranche counters (e.g. the workflow
+        # was re-run manually for testing) -- replay the cached result instead of
+        # incrementing days_done a second time for one real trading day.
+        cached = ts.get("last_status", {})
+        status = TickerStatus(
+            alerts=[StageAlert(**a) for a in cached.get("alerts", [])],
+            stop_loss_price=cached.get("stop_loss_price"),
+            stop_loss_triggered=cached.get("stop_loss_triggered", False),
+        )
+        return status
+
     status = TickerStatus()
 
     # Stage 1: fresh touch of the 20-day SMA -> 10% of cash. Stateless: fires every
@@ -140,4 +154,10 @@ def evaluate(ticker: str, data: TickerData, state: dict) -> TickerStatus:
             f"전일 종가 ${prev.Close:,.2f} → 오늘 종가 ${last.Close:,.2f} ({(last.Close/prev.Close-1)*100:.1f}%)."
         ))
 
+    ts["last_processed_date"] = last_date
+    ts["last_status"] = {
+        "alerts": [vars(a) for a in status.alerts],
+        "stop_loss_price": status.stop_loss_price,
+        "stop_loss_triggered": status.stop_loss_triggered,
+    }
     return status

@@ -1,7 +1,9 @@
-# finance-yoo — 매일 아침 관심종목 매수 신호 브리핑
+# finance-yoo — 매일 아침 관심종목 매수 신호 대시보드
 
 미국 주식 관심종목의 가격/거래량을 매일 분석해서, 아래 규칙에 따른 매수 신호나
-현재 진행 중인 분할매수 구간을 이메일로 보내는 GitHub Actions 자동화입니다.
+현재 진행 중인 분할매수 구간을 **웹 대시보드(GitHub Pages)** 로 보여주는 GitHub
+Actions 자동화입니다. 매일 아침 자동으로 페이지가 갱신되고, 폰 홈 화면에 아이콘으로
+추가해두면 앱처럼 열어볼 수 있어요. 이메일은 보내지 않습니다.
 
 ## 매수 규칙 (사용자 정의)
 
@@ -13,10 +15,11 @@
 5. 손절가는 항상 "전일 종가 대비 -10%"로 매일 새로 계산
 
 "터치"는 그날의 고가~저가 범위 안에 해당 이동평균선이 들어오는 경우로 판단합니다.
-1번은 매번 새로 닿을 때마다(과거에 이미 닿았어도) 다시 알림이 오고, 2~4번은 며칠에
+1번은 매번 새로 닿을 때마다(과거에 이미 닿았어도) 다시 신호가 뜨고, 2~4번은 며칠에
 걸친 분할매수 구간이라 "오늘이 몇 일차인지"를 `state/signals.json`에 저장해뒀다가
 다음 실행 때 이어서 판단합니다 (그래서 GitHub Actions가 실행될 때마다 이 파일을
-자동으로 커밋합니다 — 직접 수정하지 마세요).
+자동으로 커밋합니다 — 직접 수정하지 마세요). 하루에 워크플로우를 여러 번 수동
+실행해도 같은 거래일 기준으로는 하루치만 카운트되도록 되어 있습니다.
 
 ## 관심종목 관리
 
@@ -27,40 +30,34 @@ GitHub에서 이 파일만 수정(웹/모바일에서도 가능)하면 다음 �
 # 예시
 AAPL
 NVDA
+QLD
 ```
 
-## 설정이 필요한 것
+## 처음 설정하는 방법
 
-GitHub 저장소 Settings → Secrets and variables → Actions 에 아래 4개를 등록하세요.
+1. **GitHub Pages 활성화**: 저장소 Settings → Pages → Build and deployment → Source를
+   **GitHub Actions**로 선택합니다 (브랜치/폴더 지정 아님, 이 옵션이어야 아래 워크플로우가
+   바로 배포할 수 있어요).
+2. **Secret 등록**: Settings → Secrets and variables → Actions 에 `ANTHROPIC_API_KEY`를
+   등록하세요 ([console.anthropic.com](https://console.anthropic.com)에서 발급, 영문 뉴스
+   제목 번역에만 쓰여서 비용은 매우 적습니다). 없어도 동작은 하고 뉴스만 영문으로 나옵니다.
+3. 이 브랜치가 기본 브랜치(main 등)에 머지되면 매일 07:00(KST)에 자동 실행되고, 처음
+   배포된 뒤에는 저장소 Settings → Pages에 뜨는 URL(`https://<계정>.github.io/<저장소>/`)
+   로 접속해서 확인하면 됩니다. 그 URL을 폰 브라우저에서 열고 "홈 화면에 추가"하면
+   아이콘을 눌러 앱처럼 열 수 있어요.
 
-| Secret 이름 | 설명 |
-|---|---|
-| `ANTHROPIC_API_KEY` | 영문 뉴스 제목 번역에만 사용 (분석/코멘트 생성 아님). [console.anthropic.com](https://console.anthropic.com)에서 발급, 비용은 매우 적음 |
-| `MAIL_FROM_ADDRESS` | 발신용 Gmail 주소 |
-| `MAIL_FROM_APP_PASSWORD` | 위 Gmail 계정의 **앱 비밀번호** (일반 로그인 비밀번호 아님 — Google 계정 → 보안 → 2단계 인증 → 앱 비밀번호) |
-| `MAIL_TO` | 받는 사람 이메일 |
-
-Gmail이 아닌 다른 SMTP를 쓰려면 `SMTP_HOST`/`SMTP_PORT` 시크릿을 추가하면 됩니다
-(기본값은 Gmail 465 포트).
-
-## 로컬 테스트
+## 로컬/CI 테스트
 
 ```bash
 pip install -r requirements.txt
 export ANTHROPIC_API_KEY=...
-python main.py --dry-run   # out.html 생성, 이메일 발송 안 함, state/signals.json은 갱신됨
+python main.py --dry-run   # out.html 생성, public/이나 state/signals.json은 건드리지 않음
 ```
 
-메일 발송까지 테스트하려면 `MAIL_FROM_ADDRESS`/`MAIL_FROM_APP_PASSWORD`/`MAIL_TO`도
-export한 뒤 `--dry-run` 없이 실행하세요.
-
-GitHub Actions에서 스케줄을 기다리지 않고 바로 테스트하려면 저장소의
-**Actions → Daily Watchlist Briefing → Run workflow**로 수동 실행할 수 있습니다.
-이때 `dry_run` 체크박스를 켜면 메일을 보내지 않고 `out.html`을 아티팩트로 만들어주므로,
-`MAIL_FROM_ADDRESS`/`MAIL_FROM_APP_PASSWORD`/`MAIL_TO` 시크릿 없이 `ANTHROPIC_API_KEY`만
-있어도(그마저 없어도 뉴스가 영문으로 나올 뿐 동작은 함) 실행 결과를 미리 확인할 수
-있습니다. 실행이 끝나면 해당 워크플로우 run 페이지 하단의 Artifacts에서
-`briefing-preview`를 내려받아 `out.html`을 브라우저로 열어보세요.
+GitHub Actions에서 바로 테스트하려면 저장소의 **Actions → Daily Watchlist Dashboard →
+Run workflow**에서 `dry_run`을 켜고 실행하세요. 배포/상태 커밋 없이 실행되고, run 페이지
+하단 Artifacts의 `dashboard-preview`를 내려받아 `out.html`을 열어보면 결과를 미리 볼 수
+있습니다.
 
 ## 알아두면 좋은 점
 
@@ -71,3 +68,6 @@ GitHub Actions에서 스케줄을 기다리지 않고 바로 테스트하려면 
   종목마다 다를 수 있습니다.
 - `state/signals.json`은 자동 관리 파일입니다. 규칙이나 분할매수 진행 상황을
   리셋하고 싶으면 이 파일 내용을 `{}`로 되돌리면 됩니다.
+- GitHub Pages는 기본적으로 공개(public) URL입니다. URL을 아는 사람은 누구나 브리핑
+  내용(보유 전략, 매수 계획)을 볼 수 있다는 뜻이라, 민감하게 여겨지면 알려주세요 —
+  접근을 제한하는 방법(예: 별도 인증 프록시)을 추가로 구성할 수 있습니다.

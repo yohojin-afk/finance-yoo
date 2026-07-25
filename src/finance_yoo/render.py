@@ -80,3 +80,19 @@ def render_email(*, tickers_data: dict[str, TickerData], statuses: dict[str, Tic
   </div>
 </div>
 """
+
+
+def render_page(content_html: str) -> str:
+    """Wrap the rendered content as a standalone HTML page for GitHub Pages."""
+    return f"""<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>오늘의 매수 신호 체크</title>
+</head>
+<body style="margin:0;background:#f6f6f8;">
+{content_html}
+</body>
+</html>
+"""
