@@ -13,10 +13,10 @@
       "days_done": 0
     },
     "stage3_completed_before": false,
-    "last_processed_date": "2026-07-24",
+    "last_processed_date": "2026-07-27",
     "last_status": {
       "alerts": [],
-      "stop_loss_price": 289.49400329589844,
+      "stop_loss_price": 299.7179901123047,
       "stop_loss_triggered": false
     }
   },
@@ -26,18 +26,29 @@
       "days_done": 0
     },
     "stage3": {
-      "active": false,
-      "days_done": 0
+      "active": true,
+      "days_done": 1
     },
     "stage4": {
       "active": false,
       "days_done": 0
     },
     "stage3_completed_before": false,
-    "last_processed_date": "2026-07-24",
+    "last_processed_date": "2026-07-27",
     "last_status": {
-      "alerts": [],
-      "stop_loss_price": 187.88399505615234,
+      "alerts": [
+        {
+          "stage": "stage1",
+          "headline": "20일선 터치 — 가용 현금의 10% 매수",
+          "detail": "종가 $196.51, 20일선 $203.53 부근 도달."
+        },
+        {
+          "stage": "stage3",
+          "headline": "120일선 매수 구간 1/5일차 — 남은 현금의 50% 분할매수",
+          "detail": "종가 $196.51, 120일선 $197.45. 5거래일 분할매수 계획의 1일차."
+        }
+      ],
+      "stop_loss_price": 186.15599670410157,
       "stop_loss_triggered": false
     }
   },
@@ -55,17 +66,17 @@
       "days_done": 0
     },
     "stage3_completed_before": false,
-    "last_processed_date": "2026-07-24",
+    "last_processed_date": "2026-07-27",
     "last_status": {
       "alerts": [],
-      "stop_loss_price": 76.5,
+      "stop_loss_price": 74.7,
       "stop_loss_triggered": false
     }
   },
   "SSO": {
     "stage2": {
-      "active": false,
-      "days_done": 0
+      "active": true,
+      "days_done": 1
     },
     "stage3": {
       "active": false,
@@ -76,10 +87,16 @@
       "days_done": 0
     },
     "stage3_completed_before": false,
-    "last_processed_date": "2026-07-24",
+    "last_processed_date": "2026-07-27",
     "last_status": {
-      "alerts": [],
-      "stop_loss_price": 59.04900054931641,
+      "alerts": [
+        {
+          "stage": "stage2",
+          "headline": "60일선 매수 구간 1/5일차 — 남은 현금의 50% 분할매수",
+          "detail": "종가 $65.70, 60일선 $66.79. 5거래일 분할매수 계획의 1일차."
+        }
+      ],
+      "stop_loss_price": 59.10299835205078,
       "stop_loss_triggered": false
     }
   },
@@ -89,18 +106,24 @@
       "days_done": 0
     },
     "stage3": {
-      "active": false,
-      "days_done": 0
+      "active": true,
+      "days_done": 1
     },
     "stage4": {
       "active": false,
       "days_done": 0
     },
     "stage3_completed_before": false,
-    "last_processed_date": "2026-07-24",
+    "last_processed_date": "2026-07-27",
     "last_status": {
-      "alerts": [],
-      "stop_loss_price": 59.670002746582036,
+      "alerts": [
+        {
+          "stage": "stage3",
+          "headline": "120일선 매수 구간 1/5일차 — 남은 현금의 50% 분할매수",
+          "detail": "종가 $63.40, 120일선 $62.49. 5거래일 분할매수 계획의 1일차."
+        }
+      ],
+      "stop_loss_price": 57.6,
       "stop_loss_triggered": false
     }
   },
@@ -110,25 +133,25 @@
       "days_done": 0
     },
     "stage3": {
-      "active": false,
-      "days_done": 0
+      "active": true,
+      "days_done": 1
     },
     "stage4": {
       "active": false,
       "days_done": 0
     },
     "stage3_completed_before": false,
-    "last_processed_date": "2026-07-24",
+    "last_processed_date": "2026-07-27",
     "last_status": {
       "alerts": [
         {
-          "stage": "stop_loss",
-          "headline": "손절 신호 — 전일 대비 -10% 이상 하락",
-          "detail": "전일 종가 $157.50 → 오늘 종가 $136.81 (-13.1%)."
+          "stage": "stage3",
+          "headline": "120일선 매수 구간 1/5일차 — 남은 현금의 50% 분할매수",
+          "detail": "종가 $128.15, 120일선 $131.05. 5거래일 분할매수 계획의 1일차."
         }
       ],
-      "stop_loss_price": 141.75,
-      "stop_loss_triggered": true
+      "stop_loss_price": 123.12899780273438,
+      "stop_loss_triggered": false
     }
   },
   "UPRO": {
@@ -145,10 +168,10 @@
       "days_done": 0
     },
     "stage3_completed_before": false,
-    "last_processed_date": "2026-07-24",
+    "last_processed_date": "2026-07-27",
     "last_status": {
       "alerts": [],
-      "stop_loss_price": 122.51700439453126,
+      "stop_loss_price": 122.64300384521485,
       "stop_loss_triggered": false
     }
   },
@@ -166,10 +189,10 @@
       "days_done": 0
     },
     "stage3_completed_before": false,
-    "last_processed_date": "2026-07-24",
+    "last_processed_date": "2026-07-27",
     "last_status": {
       "alerts": [],
-      "stop_loss_price": 287.72100219726565,
+      "stop_loss_price": 281.7269989013672,
       "stop_loss_triggered": false
     }
   },
@@ -187,10 +210,16 @@
       "days_done": 0
     },
     "stage3_completed_before": false,
-    "last_processed_date": "2026-07-24",
+    "last_processed_date": "2026-07-27",
     "last_status": {
-      "alerts": [],
-      "stop_loss_price": 1.907999897003174,
+      "alerts": [
+        {
+          "stage": "stage1",
+          "headline": "20일선 터치 — 가용 현금의 10% 매수",
+          "detail": "종가 $2.08, 20일선 $2.18 부근 도달."
+        }
+      ],
+      "stop_loss_price": 1.8629999399185182,
       "stop_loss_triggered": false
     }
   }
