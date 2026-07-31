@@ -13,10 +13,10 @@
       "days_done": 0
     },
     "stage3_completed_before": false,
-    "last_processed_date": "2026-07-29",
+    "last_processed_date": "2026-07-30",
     "last_status": {
       "alerts": [],
-      "stop_loss_price": 306.0719879150391,
+      "stop_loss_price": 304.3710021972656,
       "stop_loss_triggered": false
     }
   },
@@ -27,23 +27,23 @@
     },
     "stage3": {
       "active": true,
-      "days_done": 3
+      "days_done": 4
     },
     "stage4": {
       "active": false,
       "days_done": 0
     },
     "stage3_completed_before": false,
-    "last_processed_date": "2026-07-29",
+    "last_processed_date": "2026-07-30",
     "last_status": {
       "alerts": [
         {
           "stage": "stage3",
-          "headline": "120일선 매수 구간 3/5일차 — 남은 현금의 50% 분할매수",
-          "detail": "종가 $190.01, 120일선 $197.72. 5거래일 분할매수 계획의 3일차."
+          "headline": "120일선 매수 구간 4/5일차 — 남은 현금의 50% 분할매수",
+          "detail": "종가 $195.04, 120일선 $197.92. 5거래일 분할매수 계획의 4일차."
         }
       ],
-      "stop_loss_price": 177.30899505615236,
+      "stop_loss_price": 171.00899505615234,
       "stop_loss_triggered": false
     }
   },
@@ -54,30 +54,30 @@
     },
     "stage3": {
       "active": true,
-      "days_done": 2
+      "days_done": 3
     },
     "stage4": {
       "active": false,
       "days_done": 0
     },
     "stage3_completed_before": false,
-    "last_processed_date": "2026-07-29",
+    "last_processed_date": "2026-07-30",
     "last_status": {
       "alerts": [
         {
           "stage": "stage3",
-          "headline": "120일선 매수 구간 2/5일차 — 남은 현금의 50% 분할매수",
-          "detail": "종가 $77.58, 120일선 $80.07. 5거래일 분할매수 계획의 2일차."
+          "headline": "120일선 매수 구간 3/5일차 — 남은 현금의 50% 분할매수",
+          "detail": "종가 $82.68, 120일선 $80.21. 5거래일 분할매수 계획의 3일차."
         }
       ],
-      "stop_loss_price": 72.78300247192384,
+      "stop_loss_price": 69.82200164794922,
       "stop_loss_triggered": false
     }
   },
   "SSO": {
     "stage2": {
       "active": true,
-      "days_done": 3
+      "days_done": 4
     },
     "stage3": {
       "active": false,
@@ -88,16 +88,16 @@
       "days_done": 0
     },
     "stage3_completed_before": false,
-    "last_processed_date": "2026-07-29",
+    "last_processed_date": "2026-07-30",
     "last_status": {
       "alerts": [
         {
           "stage": "stage2",
-          "headline": "60일선 매수 구간 3/5일차 — 남은 현금의 50% 분할매수",
-          "detail": "종가 $64.01, 60일선 $66.85. 5거래일 분할매수 계획의 3일차."
+          "headline": "60일선 매수 구간 4/5일차 — 남은 현금의 50% 분할매수",
+          "detail": "종가 $66.10, 60일선 $66.90. 5거래일 분할매수 계획의 4일차."
         }
       ],
-      "stop_loss_price": 59.38200302124024,
+      "stop_loss_price": 57.609001922607426,
       "stop_loss_triggered": false
     }
   },
@@ -108,23 +108,23 @@
     },
     "stage3": {
       "active": true,
-      "days_done": 3
+      "days_done": 4
     },
     "stage4": {
       "active": false,
       "days_done": 0
     },
     "stage3_completed_before": false,
-    "last_processed_date": "2026-07-29",
+    "last_processed_date": "2026-07-30",
     "last_status": {
       "alerts": [
         {
           "stage": "stage3",
-          "headline": "120일선 매수 구간 3/5일차 — 남은 현금의 50% 분할매수",
-          "detail": "종가 $57.75, 120일선 $62.63. 5거래일 분할매수 계획의 3일차."
+          "headline": "120일선 매수 구간 4/5일차 — 남은 현금의 50% 분할매수",
+          "detail": "종가 $63.30, 120일선 $62.76. 5거래일 분할매수 계획의 4일차."
         }
       ],
-      "stop_loss_price": 55.404001235961914,
+      "stop_loss_price": 51.975,
       "stop_loss_triggered": false
     }
   },
@@ -135,29 +135,24 @@
     },
     "stage3": {
       "active": true,
-      "days_done": 3
+      "days_done": 4
     },
     "stage4": {
       "active": false,
       "days_done": 0
     },
     "stage3_completed_before": false,
-    "last_processed_date": "2026-07-29",
+    "last_processed_date": "2026-07-30",
     "last_status": {
       "alerts": [
         {
-          "stage": "stop_loss",
-          "headline": "손절 신호 — 전일 대비 -10% 이상 하락",
-          "detail": "전일 종가 $109.54 → 오늘 종가 $91.99 (-16.0%)."
-        },
-        {
           "stage": "stage3",
-          "headline": "120일선 매수 구간 3/5일차 — 남은 현금의 50% 분할매수",
-          "detail": "종가 $91.99, 120일선 $131.78. 5거래일 분할매수 계획의 3일차."
+          "headline": "120일선 매수 구간 4/5일차 — 남은 현금의 50% 분할매수",
+          "detail": "종가 $114.72, 120일선 $132.29. 5거래일 분할매수 계획의 4일차."
         }
       ],
-      "stop_loss_price": 98.58600082397462,
-      "stop_loss_triggered": true
+      "stop_loss_price": 82.79099807739259,
+      "stop_loss_triggered": false
     }
   },
   "UPRO": {
@@ -174,10 +169,10 @@
       "days_done": 0
     },
     "stage3_completed_before": false,
-    "last_processed_date": "2026-07-29",
+    "last_processed_date": "2026-07-30",
     "last_status": {
       "alerts": [],
-      "stop_loss_price": 123.57000274658203,
+      "stop_loss_price": 117.90899505615235,
       "stop_loss_triggered": false
     }
   },
@@ -195,17 +190,17 @@
       "days_done": 0
     },
     "stage3_completed_before": false,
-    "last_processed_date": "2026-07-29",
+    "last_processed_date": "2026-07-30",
     "last_status": {
       "alerts": [],
-      "stop_loss_price": 276.6960021972656,
+      "stop_loss_price": 268.4880065917969,
       "stop_loss_triggered": false
     }
   },
   "CMPX": {
     "stage2": {
       "active": true,
-      "days_done": 2
+      "days_done": 3
     },
     "stage3": {
       "active": false,
@@ -216,16 +211,16 @@
       "days_done": 0
     },
     "stage3_completed_before": false,
-    "last_processed_date": "2026-07-29",
+    "last_processed_date": "2026-07-30",
     "last_status": {
       "alerts": [
         {
           "stage": "stage2",
-          "headline": "60일선 매수 구간 2/5일차 — 남은 현금의 50% 분할매수",
-          "detail": "종가 $1.94, 60일선 $2.07. 5거래일 분할매수 계획의 2일차."
+          "headline": "60일선 매수 구간 3/5일차 — 남은 현금의 50% 분할매수",
+          "detail": "종가 $1.94, 60일선 $2.07. 5거래일 분할매수 계획의 3일차."
         }
       ],
-      "stop_loss_price": 1.8359999656677246,
+      "stop_loss_price": 1.746000051498413,
       "stop_loss_triggered": false
     }
   }
