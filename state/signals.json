@@ -1,8 +1,8 @@
 {
   "AAPL": {
     "stage2": {
-      "active": false,
-      "days_done": 0
+      "active": true,
+      "days_done": 1
     },
     "stage3": {
       "active": false,
@@ -13,16 +13,16 @@
       "days_done": 0
     },
     "stage3_completed_before": false,
-    "last_processed_date": "2026-08-17",
+    "last_processed_date": "2026-08-18",
     "last_status": {
       "alerts": [
         {
           "stage": "stage2",
-          "headline": "60일선 매수 구간 5/5일차 — 남은 현금의 50% 분할매수",
-          "detail": "종가 $305.59, 60일선 $309.24. 5거래일 분할매수 계획의 5일차."
+          "headline": "60일선 매수 구간 1/5일차 — 남은 현금의 50% 분할매수",
+          "detail": "종가 $310.03, 60일선 $309.33. 5거래일 분할매수 계획의 1일차."
         }
       ],
-      "stop_loss_price": 275.3369934082031,
+      "stop_loss_price": 275.0309967041016,
       "stop_loss_triggered": false
     }
   },
@@ -40,17 +40,17 @@
       "days_done": 0
     },
     "stage3_completed_before": true,
-    "last_processed_date": "2026-08-17",
+    "last_processed_date": "2026-08-18",
     "last_status": {
       "alerts": [],
-      "stop_loss_price": 202.64400329589844,
+      "stop_loss_price": 202.50899505615234,
       "stop_loss_triggered": false
     }
   },
   "QLD": {
     "stage2": {
-      "active": false,
-      "days_done": 0
+      "active": true,
+      "days_done": 1
     },
     "stage3": {
       "active": false,
@@ -61,16 +61,16 @@
       "days_done": 0
     },
     "stage3_completed_before": true,
-    "last_processed_date": "2026-08-17",
+    "last_processed_date": "2026-08-18",
     "last_status": {
       "alerts": [
         {
           "stage": "stage2",
-          "headline": "60일선 매수 구간 5/5일차 — 남은 현금의 50% 분할매수",
-          "detail": "종가 $93.84, 60일선 $91.59. 5거래일 분할매수 계획의 5일차."
+          "headline": "60일선 매수 구간 1/5일차 — 남은 현금의 50% 분할매수",
+          "detail": "종가 $90.65, 60일선 $91.56. 5거래일 분할매수 계획의 1일차."
         }
       ],
-      "stop_loss_price": 84.73500137329101,
+      "stop_loss_price": 84.45599670410157,
       "stop_loss_triggered": false
     }
   },
@@ -88,17 +88,17 @@
       "days_done": 0
     },
     "stage3_completed_before": false,
-    "last_processed_date": "2026-08-17",
+    "last_processed_date": "2026-08-18",
     "last_status": {
       "alerts": [],
-      "stop_loss_price": 64.97999725341798,
+      "stop_loss_price": 64.35000000000001,
       "stop_loss_triggered": false
     }
   },
   "TQQQ": {
     "stage2": {
-      "active": true,
-      "days_done": 4
+      "active": false,
+      "days_done": 0
     },
     "stage3": {
       "active": false,
@@ -109,16 +109,16 @@
       "days_done": 0
     },
     "stage3_completed_before": true,
-    "last_processed_date": "2026-08-17",
+    "last_processed_date": "2026-08-18",
     "last_status": {
       "alerts": [
         {
           "stage": "stage2",
-          "headline": "60일선 매수 구간 4/5일차 — 남은 현금의 50% 분할매수",
-          "detail": "종가 $76.40, 60일선 $74.80. 5거래일 분할매수 계획의 4일차."
+          "headline": "60일선 매수 구간 5/5일차 — 남은 현금의 50% 분할매수",
+          "detail": "종가 $72.53, 60일선 $74.72. 5거래일 분할매수 계획의 5일차."
         }
       ],
-      "stop_loss_price": 69.1110008239746,
+      "stop_loss_price": 68.76000137329102,
       "stop_loss_triggered": false
     }
   },
@@ -136,11 +136,22 @@
       "days_done": 0
     },
     "stage3_completed_before": true,
-    "last_processed_date": "2026-08-17",
+    "last_processed_date": "2026-08-18",
     "last_status": {
-      "alerts": [],
-      "stop_loss_price": 130.454997253418,
-      "stop_loss_triggered": false
+      "alerts": [
+        {
+          "stage": "stop_loss",
+          "headline": "손절 신호 — 전일 대비 -10% 이상 하락",
+          "detail": "전일 종가 $151.53 → 오늘 종가 $129.10 (-14.8%)."
+        },
+        {
+          "stage": "stage1",
+          "headline": "20일선 터치 — 가용 현금의 10% 매수",
+          "detail": "종가 $129.10, 20일선 $132.59 부근 도달."
+        }
+      ],
+      "stop_loss_price": 136.3769989013672,
+      "stop_loss_triggered": true
     }
   },
   "UPRO": {
@@ -157,10 +168,10 @@
       "days_done": 0
     },
     "stage3_completed_before": false,
-    "last_processed_date": "2026-08-17",
+    "last_processed_date": "2026-08-18",
     "last_status": {
       "alerts": [],
-      "stop_loss_price": 140.96700439453124,
+      "stop_loss_price": 138.95999450683595,
       "stop_loss_triggered": false
     }
   },
@@ -178,10 +189,10 @@
       "days_done": 0
     },
     "stage3_completed_before": false,
-    "last_processed_date": "2026-08-17",
+    "last_processed_date": "2026-08-18",
     "last_status": {
       "alerts": [],
-      "stop_loss_price": 308.0429901123047,
+      "stop_loss_price": 305.3699890136719,
       "stop_loss_triggered": false
     }
   },
@@ -199,10 +210,10 @@
       "days_done": 0
     },
     "stage3_completed_before": false,
-    "last_processed_date": "2026-08-17",
+    "last_processed_date": "2026-08-18",
     "last_status": {
       "alerts": [],
-      "stop_loss_price": 2.025,
+      "stop_loss_price": 2.078999948501587,
       "stop_loss_triggered": false
     }
   }
