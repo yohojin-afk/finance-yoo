@@ -2,7 +2,7 @@
   "AAPL": {
     "stage2": {
       "active": true,
-      "days_done": 3
+      "days_done": 4
     },
     "stage3": {
       "active": false,
@@ -13,16 +13,16 @@
       "days_done": 0
     },
     "stage3_completed_before": false,
-    "last_processed_date": "2026-08-20",
+    "last_processed_date": "2026-08-21",
     "last_status": {
       "alerts": [
         {
           "stage": "stage2",
-          "headline": "60일선 매수 구간 3/5일차 — 남은 현금의 50% 분할매수",
-          "detail": "종가 $311.30, 60일선 $309.51. 5거래일 분할매수 계획의 3일차."
+          "headline": "60일선 매수 구간 4/5일차 — 남은 현금의 50% 분할매수",
+          "detail": "종가 $309.35, 60일선 $309.48. 5거래일 분할매수 계획의 4일차."
         }
       ],
-      "stop_loss_price": 285.14698791503906,
+      "stop_loss_price": 280.1699890136719,
       "stop_loss_triggered": false
     }
   },
@@ -40,17 +40,17 @@
       "days_done": 0
     },
     "stage3_completed_before": true,
-    "last_processed_date": "2026-08-20",
+    "last_processed_date": "2026-08-21",
     "last_status": {
       "alerts": [],
-      "stop_loss_price": 195.8039978027344,
+      "stop_loss_price": 195.16500549316407,
       "stop_loss_triggered": false
     }
   },
   "QLD": {
     "stage2": {
       "active": true,
-      "days_done": 3
+      "days_done": 4
     },
     "stage3": {
       "active": false,
@@ -61,21 +61,16 @@
       "days_done": 0
     },
     "stage3_completed_before": true,
-    "last_processed_date": "2026-08-20",
+    "last_processed_date": "2026-08-21",
     "last_status": {
       "alerts": [
         {
-          "stage": "stage1",
-          "headline": "20일선 터치 — 가용 현금의 10% 매수",
-          "detail": "종가 $88.95, 20일선 $88.49 부근 도달."
-        },
-        {
           "stage": "stage2",
-          "headline": "60일선 매수 구간 3/5일차 — 남은 현금의 50% 분할매수",
-          "detail": "종가 $88.95, 60일선 $91.39. 5거래일 분할매수 계획의 3일차."
+          "headline": "60일선 매수 구간 4/5일차 — 남은 현금의 50% 분할매수",
+          "detail": "종가 $89.53, 60일선 $91.28. 5거래일 분할매수 계획의 4일차."
         }
       ],
-      "stop_loss_price": 81.22500000000001,
+      "stop_loss_price": 80.05499725341797,
       "stop_loss_triggered": false
     }
   },
@@ -93,10 +88,10 @@
       "days_done": 0
     },
     "stage3_completed_before": false,
-    "last_processed_date": "2026-08-20",
+    "last_processed_date": "2026-08-21",
     "last_status": {
       "alerts": [],
-      "stop_loss_price": 63.728997802734376,
+      "stop_loss_price": 62.649000549316405,
       "stop_loss_triggered": false
     }
   },
@@ -114,16 +109,10 @@
       "days_done": 0
     },
     "stage3_completed_before": true,
-    "last_processed_date": "2026-08-20",
+    "last_processed_date": "2026-08-21",
     "last_status": {
-      "alerts": [
-        {
-          "stage": "stage1",
-          "headline": "20일선 터치 — 가용 현금의 10% 매수",
-          "detail": "종가 $70.48, 20일선 $70.18 부근 도달."
-        }
-      ],
-      "stop_loss_price": 64.85399780273438,
+      "alerts": [],
+      "stop_loss_price": 63.432003021240234,
       "stop_loss_triggered": false
     }
   },
@@ -141,10 +130,10 @@
       "days_done": 0
     },
     "stage3_completed_before": true,
-    "last_processed_date": "2026-08-20",
+    "last_processed_date": "2026-08-21",
     "last_status": {
       "alerts": [],
-      "stop_loss_price": 108.66599807739259,
+      "stop_loss_price": 109.98899917602539,
       "stop_loss_triggered": false
     }
   },
@@ -162,16 +151,10 @@
       "days_done": 0
     },
     "stage3_completed_before": false,
-    "last_processed_date": "2026-08-20",
+    "last_processed_date": "2026-08-21",
     "last_status": {
-      "alerts": [
-        {
-          "stage": "stage1",
-          "headline": "20일선 터치 — 가용 현금의 10% 매수",
-          "detail": "종가 $148.28, 20일선 $148.16 부근 도달."
-        }
-      ],
-      "stop_loss_price": 136.94400329589845,
+      "alerts": [],
+      "stop_loss_price": 133.4519989013672,
       "stop_loss_triggered": false
     }
   },
@@ -189,10 +172,10 @@
       "days_done": 0
     },
     "stage3_completed_before": false,
-    "last_processed_date": "2026-08-20",
+    "last_processed_date": "2026-08-21",
     "last_status": {
       "alerts": [],
-      "stop_loss_price": 316.00799560546875,
+      "stop_loss_price": 310.61700439453125,
       "stop_loss_triggered": false
     }
   },
@@ -210,10 +193,10 @@
       "days_done": 0
     },
     "stage3_completed_before": false,
-    "last_processed_date": "2026-08-20",
+    "last_processed_date": "2026-08-21",
     "last_status": {
       "alerts": [],
-      "stop_loss_price": 2.2320000171661376,
+      "stop_loss_price": 2.123999905586243,
       "stop_loss_triggered": false
     }
   }
