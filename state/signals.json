@@ -2,33 +2,6 @@
   "AAPL": {
     "stage2": {
       "active": true,
-      "days_done": 3
-    },
-    "stage3": {
-      "active": false,
-      "days_done": 0
-    },
-    "stage4": {
-      "active": false,
-      "days_done": 0
-    },
-    "stage3_completed_before": false,
-    "last_processed_date": "2026-08-27",
-    "last_status": {
-      "alerts": [
-        {
-          "stage": "stage2",
-          "headline": "60일선 매수 구간 3/5일차 — 남은 현금의 50% 분할매수",
-          "detail": "종가 $314.58, 60일선 $309.52. 5거래일 분할매수 계획의 3일차."
-        }
-      ],
-      "stop_loss_price": 282.1050109863281,
-      "stop_loss_triggered": false
-    }
-  },
-  "NVDA": {
-    "stage2": {
-      "active": true,
       "days_done": 4
     },
     "stage3": {
@@ -39,24 +12,24 @@
       "active": false,
       "days_done": 0
     },
-    "stage3_completed_before": true,
-    "last_processed_date": "2026-08-27",
+    "stage3_completed_before": false,
+    "last_processed_date": "2026-08-28",
     "last_status": {
       "alerts": [
         {
           "stage": "stage2",
           "headline": "60일선 매수 구간 4/5일차 — 남은 현금의 50% 분할매수",
-          "detail": "종가 $227.98, 60일선 $208.23. 5거래일 분할매수 계획의 4일차."
+          "detail": "종가 $319.70, 60일선 $309.68. 5거래일 분할매수 계획의 4일차."
         }
       ],
-      "stop_loss_price": 188.69400329589845,
+      "stop_loss_price": 283.1219879150391,
       "stop_loss_triggered": false
     }
   },
-  "QLD": {
+  "NVDA": {
     "stage2": {
-      "active": true,
-      "days_done": 1
+      "active": false,
+      "days_done": 0
     },
     "stage3": {
       "active": false,
@@ -67,21 +40,48 @@
       "days_done": 0
     },
     "stage3_completed_before": true,
-    "last_processed_date": "2026-08-27",
+    "last_processed_date": "2026-08-28",
     "last_status": {
       "alerts": [
         {
           "stage": "stage1",
           "headline": "20일선 터치 — 가용 현금의 10% 매수",
-          "detail": "종가 $91.38, 20일선 $90.47 부근 도달."
+          "detail": "종가 $217.55, 20일선 $218.05 부근 도달."
         },
         {
           "stage": "stage2",
-          "headline": "60일선 매수 구간 1/5일차 — 남은 현금의 50% 분할매수",
-          "detail": "종가 $91.38, 60일선 $90.62. 5거래일 분할매수 계획의 1일차."
+          "headline": "60일선 매수 구간 5/5일차 — 남은 현금의 50% 분할매수",
+          "detail": "종가 $217.55, 60일선 $208.28. 5거래일 분할매수 계획의 5일차."
         }
       ],
-      "stop_loss_price": 80.03700027465821,
+      "stop_loss_price": 205.18199615478517,
+      "stop_loss_triggered": false
+    }
+  },
+  "QLD": {
+    "stage2": {
+      "active": true,
+      "days_done": 2
+    },
+    "stage3": {
+      "active": false,
+      "days_done": 0
+    },
+    "stage4": {
+      "active": false,
+      "days_done": 0
+    },
+    "stage3_completed_before": true,
+    "last_processed_date": "2026-08-28",
+    "last_status": {
+      "alerts": [
+        {
+          "stage": "stage2",
+          "headline": "60일선 매수 구간 2/5일차 — 남은 현금의 50% 분할매수",
+          "detail": "종가 $90.17, 60일선 $90.45. 5거래일 분할매수 계획의 2일차."
+        }
+      ],
+      "stop_loss_price": 82.24199752807617,
       "stop_loss_triggered": false
     }
   },
@@ -99,23 +99,17 @@
       "days_done": 0
     },
     "stage3_completed_before": false,
-    "last_processed_date": "2026-08-27",
+    "last_processed_date": "2026-08-28",
     "last_status": {
-      "alerts": [
-        {
-          "stage": "stage1",
-          "headline": "20일선 터치 — 가용 현금의 10% 매수",
-          "detail": "종가 $71.07, 20일선 $70.69 부근 도달."
-        }
-      ],
-      "stop_loss_price": 63.144003295898436,
+      "alerts": [],
+      "stop_loss_price": 63.962999725341795,
       "stop_loss_triggered": false
     }
   },
   "TQQQ": {
     "stage2": {
       "active": true,
-      "days_done": 1
+      "days_done": 2
     },
     "stage3": {
       "active": false,
@@ -126,21 +120,16 @@
       "days_done": 0
     },
     "stage3_completed_before": true,
-    "last_processed_date": "2026-08-27",
+    "last_processed_date": "2026-08-28",
     "last_status": {
       "alerts": [
         {
-          "stage": "stage1",
-          "headline": "20일선 터치 — 가용 현금의 10% 매수",
-          "detail": "종가 $73.30, 20일선 $72.39 부근 도달."
-        },
-        {
           "stage": "stage2",
-          "headline": "60일선 매수 구간 1/5일차 — 남은 현금의 50% 분할매수",
-          "detail": "종가 $73.30, 60일선 $73.29. 5거래일 분할매수 계획의 1일차."
+          "headline": "60일선 매수 구간 2/5일차 — 남은 현금의 50% 분할매수",
+          "detail": "종가 $71.85, 60일선 $73.04. 5거래일 분할매수 계획의 2일차."
         }
       ],
-      "stop_loss_price": 63.42300109863282,
+      "stop_loss_price": 65.97000274658204,
       "stop_loss_triggered": false
     }
   },
@@ -158,10 +147,10 @@
       "days_done": 0
     },
     "stage3_completed_before": true,
-    "last_processed_date": "2026-08-27",
+    "last_processed_date": "2026-08-28",
     "last_status": {
       "alerts": [],
-      "stop_loss_price": 104.93999862670898,
+      "stop_loss_price": 110.74500274658203,
       "stop_loss_triggered": false
     }
   },
@@ -179,16 +168,10 @@
       "days_done": 0
     },
     "stage3_completed_before": false,
-    "last_processed_date": "2026-08-27",
+    "last_processed_date": "2026-08-28",
     "last_status": {
-      "alerts": [
-        {
-          "stage": "stage1",
-          "headline": "20일선 터치 — 가용 현금의 10% 매수",
-          "detail": "종가 $152.91, 20일선 $151.80 부근 도달."
-        }
-      ],
-      "stop_loss_price": 134.9730010986328,
+      "alerts": [],
+      "stop_loss_price": 137.61900329589844,
       "stop_loss_triggered": false
     }
   },
@@ -206,10 +189,10 @@
       "days_done": 0
     },
     "stage3_completed_before": false,
-    "last_processed_date": "2026-08-27",
+    "last_processed_date": "2026-08-28",
     "last_status": {
       "alerts": [],
-      "stop_loss_price": 311.2380065917969,
+      "stop_loss_price": 319.32899780273436,
       "stop_loss_triggered": false
     }
   },
@@ -227,10 +210,10 @@
       "days_done": 0
     },
     "stage3_completed_before": false,
-    "last_processed_date": "2026-08-27",
+    "last_processed_date": "2026-08-28",
     "last_status": {
       "alerts": [],
-      "stop_loss_price": 2.187000060081482,
+      "stop_loss_price": 2.2679999828338624,
       "stop_loss_triggered": false
     }
   }
