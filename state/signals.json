@@ -2,7 +2,7 @@
   "AAPL": {
     "stage2": {
       "active": true,
-      "days_done": 1
+      "days_done": 2
     },
     "stage3": {
       "active": false,
@@ -13,21 +13,16 @@
       "days_done": 0
     },
     "stage3_completed_before": false,
-    "last_processed_date": "2026-09-09",
+    "last_processed_date": "2026-09-10",
     "last_status": {
       "alerts": [
         {
-          "stage": "stage1",
-          "headline": "20일선 터치 — 가용 현금의 10% 매수",
-          "detail": "종가 $315.34, 20일선 $314.06 부근 도달."
-        },
-        {
           "stage": "stage2",
-          "headline": "60일선 매수 구간 1/5일차 — 남은 현금의 50% 분할매수",
-          "detail": "종가 $315.34, 60일선 $312.30. 5거래일 분할매수 계획의 1일차."
+          "headline": "60일선 매수 구간 2/5일차 — 남은 현금의 50% 분할매수",
+          "detail": "종가 $326.57, 60일선 $312.81. 5거래일 분할매수 계획의 2일차."
         }
       ],
-      "stop_loss_price": 284.59800109863284,
+      "stop_loss_price": 283.8059967041016,
       "stop_loss_triggered": false
     }
   },
@@ -45,14 +40,74 @@
       "days_done": 0
     },
     "stage3_completed_before": true,
-    "last_processed_date": "2026-09-09",
+    "last_processed_date": "2026-09-10",
     "last_status": {
-      "alerts": [],
-      "stop_loss_price": 203.15699615478516,
+      "alerts": [
+        {
+          "stage": "stage1",
+          "headline": "20일선 터치 — 가용 현금의 10% 매수",
+          "detail": "종가 $218.36, 20일선 $220.51 부근 도달."
+        }
+      ],
+      "stop_loss_price": 201.3029983520508,
       "stop_loss_triggered": false
     }
   },
   "QLD": {
+    "stage2": {
+      "active": false,
+      "days_done": 0
+    },
+    "stage3": {
+      "active": false,
+      "days_done": 0
+    },
+    "stage4": {
+      "active": false,
+      "days_done": 0
+    },
+    "stage3_completed_before": true,
+    "last_processed_date": "2026-09-10",
+    "last_status": {
+      "alerts": [
+        {
+          "stage": "stage2",
+          "headline": "60일선 매수 구간 5/5일차 — 남은 현금의 50% 분할매수",
+          "detail": "종가 $88.02, 60일선 $90.02. 5거래일 분할매수 계획의 5일차."
+        }
+      ],
+      "stop_loss_price": 80.98200302124023,
+      "stop_loss_triggered": false
+    }
+  },
+  "SSO": {
+    "stage2": {
+      "active": true,
+      "days_done": 1
+    },
+    "stage3": {
+      "active": false,
+      "days_done": 0
+    },
+    "stage4": {
+      "active": false,
+      "days_done": 0
+    },
+    "stage3_completed_before": false,
+    "last_processed_date": "2026-09-10",
+    "last_status": {
+      "alerts": [
+        {
+          "stage": "stage2",
+          "headline": "60일선 매수 구간 1/5일차 — 남은 현금의 50% 분할매수",
+          "detail": "종가 $68.50, 60일선 $68.56. 5거래일 분할매수 계획의 1일차."
+        }
+      ],
+      "stop_loss_price": 62.414998626708986,
+      "stop_loss_triggered": false
+    }
+  },
+  "TQQQ": {
     "stage2": {
       "active": true,
       "days_done": 4
@@ -66,64 +121,16 @@
       "days_done": 0
     },
     "stage3_completed_before": true,
-    "last_processed_date": "2026-09-09",
+    "last_processed_date": "2026-09-10",
     "last_status": {
       "alerts": [
         {
           "stage": "stage2",
           "headline": "60일선 매수 구간 4/5일차 — 남은 현금의 50% 분할매수",
-          "detail": "종가 $89.98, 60일선 $90.20. 5거래일 분할매수 계획의 4일차."
+          "detail": "종가 $69.21, 60일선 $72.25. 5거래일 분할매수 계획의 4일차."
         }
       ],
-      "stop_loss_price": 81.4769989013672,
-      "stop_loss_triggered": false
-    }
-  },
-  "SSO": {
-    "stage2": {
-      "active": false,
-      "days_done": 0
-    },
-    "stage3": {
-      "active": false,
-      "days_done": 0
-    },
-    "stage4": {
-      "active": false,
-      "days_done": 0
-    },
-    "stage3_completed_before": false,
-    "last_processed_date": "2026-09-09",
-    "last_status": {
-      "alerts": [],
-      "stop_loss_price": 63.009001922607425,
-      "stop_loss_triggered": false
-    }
-  },
-  "TQQQ": {
-    "stage2": {
-      "active": true,
-      "days_done": 3
-    },
-    "stage3": {
-      "active": false,
-      "days_done": 0
-    },
-    "stage4": {
-      "active": false,
-      "days_done": 0
-    },
-    "stage3_completed_before": true,
-    "last_processed_date": "2026-09-09",
-    "last_status": {
-      "alerts": [
-        {
-          "stage": "stage2",
-          "headline": "60일선 매수 구간 3/5일차 — 남은 현금의 50% 분할매수",
-          "detail": "종가 $71.55, 60일선 $72.50. 5거래일 분할매수 계획의 3일차."
-        }
-      ],
-      "stop_loss_price": 64.94400329589844,
+      "stop_loss_price": 64.39500274658204,
       "stop_loss_triggered": false
     }
   },
@@ -141,62 +148,14 @@
       "days_done": 0
     },
     "stage3_completed_before": true,
-    "last_processed_date": "2026-09-09",
+    "last_processed_date": "2026-09-10",
     "last_status": {
       "alerts": [],
-      "stop_loss_price": 110.94299697875977,
+      "stop_loss_price": 113.28300247192384,
       "stop_loss_triggered": false
     }
   },
   "UPRO": {
-    "stage2": {
-      "active": false,
-      "days_done": 0
-    },
-    "stage3": {
-      "active": false,
-      "days_done": 0
-    },
-    "stage4": {
-      "active": false,
-      "days_done": 0
-    },
-    "stage3_completed_before": false,
-    "last_processed_date": "2026-09-09",
-    "last_status": {
-      "alerts": [],
-      "stop_loss_price": 134.37000274658203,
-      "stop_loss_triggered": false
-    }
-  },
-  "TSLA": {
-    "stage2": {
-      "active": false,
-      "days_done": 0
-    },
-    "stage3": {
-      "active": true,
-      "days_done": 4
-    },
-    "stage4": {
-      "active": false,
-      "days_done": 0
-    },
-    "stage3_completed_before": false,
-    "last_processed_date": "2026-09-09",
-    "last_status": {
-      "alerts": [
-        {
-          "stage": "stage3",
-          "headline": "120일선 매수 구간 4/5일차 — 남은 현금의 50% 분할매수",
-          "detail": "종가 $367.81, 120일선 $378.66. 5거래일 분할매수 계획의 4일차."
-        }
-      ],
-      "stop_loss_price": 331.34400329589846,
-      "stop_loss_triggered": false
-    }
-  },
-  "CMPX": {
     "stage2": {
       "active": true,
       "days_done": 1
@@ -210,16 +169,75 @@
       "days_done": 0
     },
     "stage3_completed_before": false,
-    "last_processed_date": "2026-09-09",
+    "last_processed_date": "2026-09-10",
     "last_status": {
       "alerts": [
         {
           "stage": "stage2",
           "headline": "60일선 매수 구간 1/5일차 — 남은 현금의 50% 분할매수",
-          "detail": "종가 $2.18, 60일선 $2.19. 5거래일 분할매수 계획의 1일차."
+          "detail": "종가 $144.50, 60일선 $145.29. 5거래일 분할매수 계획의 1일차."
         }
       ],
-      "stop_loss_price": 1.9890000343322753,
+      "stop_loss_price": 132.47100219726562,
+      "stop_loss_triggered": false
+    }
+  },
+  "TSLA": {
+    "stage2": {
+      "active": true,
+      "days_done": 1
+    },
+    "stage3": {
+      "active": false,
+      "days_done": 0
+    },
+    "stage4": {
+      "active": false,
+      "days_done": 0
+    },
+    "stage3_completed_before": true,
+    "last_processed_date": "2026-09-10",
+    "last_status": {
+      "alerts": [
+        {
+          "stage": "stage2",
+          "headline": "60일선 매수 구간 1/5일차 — 남은 현금의 50% 분할매수",
+          "detail": "종가 $363.56, 60일선 $362.26. 5거래일 분할매수 계획의 1일차."
+        },
+        {
+          "stage": "stage3",
+          "headline": "120일선 매수 구간 5/5일차 — 남은 현금의 50% 분할매수",
+          "detail": "종가 $363.56, 120일선 $378.52. 5거래일 분할매수 계획의 5일차."
+        }
+      ],
+      "stop_loss_price": 331.0289978027344,
+      "stop_loss_triggered": false
+    }
+  },
+  "CMPX": {
+    "stage2": {
+      "active": true,
+      "days_done": 2
+    },
+    "stage3": {
+      "active": false,
+      "days_done": 0
+    },
+    "stage4": {
+      "active": false,
+      "days_done": 0
+    },
+    "stage3_completed_before": false,
+    "last_processed_date": "2026-09-10",
+    "last_status": {
+      "alerts": [
+        {
+          "stage": "stage2",
+          "headline": "60일선 매수 구간 2/5일차 — 남은 현금의 50% 분할매수",
+          "detail": "종가 $2.05, 60일선 $2.19. 5거래일 분할매수 계획의 2일차."
+        }
+      ],
+      "stop_loss_price": 1.962000060081482,
       "stop_loss_triggered": false
     }
   }
