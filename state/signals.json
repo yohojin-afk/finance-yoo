@@ -13,16 +13,10 @@
       "days_done": 0
     },
     "stage3_completed_before": false,
-    "last_processed_date": "2026-09-15",
+    "last_processed_date": "2026-09-16",
     "last_status": {
-      "alerts": [
-        {
-          "stage": "stage2",
-          "headline": "60일선 매수 구간 5/5일차 — 남은 현금의 50% 분할매수",
-          "detail": "종가 $nan, 60일선 $nan. 5거래일 분할매수 계획의 5일차."
-        }
-      ],
-      "stop_loss_price": 299.77198791503906,
+      "alerts": [],
+      "stop_loss_price": 298.20599670410155,
       "stop_loss_triggered": false
     }
   },
@@ -40,41 +34,14 @@
       "days_done": 0
     },
     "stage3_completed_before": true,
-    "last_processed_date": "2026-09-15",
+    "last_processed_date": "2026-09-16",
     "last_status": {
       "alerts": [],
-      "stop_loss_price": 189.86400604248047,
+      "stop_loss_price": 190.9529983520508,
       "stop_loss_triggered": false
     }
   },
   "QLD": {
-    "stage2": {
-      "active": true,
-      "days_done": 3
-    },
-    "stage3": {
-      "active": false,
-      "days_done": 0
-    },
-    "stage4": {
-      "active": false,
-      "days_done": 0
-    },
-    "stage3_completed_before": true,
-    "last_processed_date": "2026-09-15",
-    "last_status": {
-      "alerts": [
-        {
-          "stage": "stage2",
-          "headline": "60일선 매수 구간 3/5일차 — 남은 현금의 50% 분할매수",
-          "detail": "종가 $nan, 60일선 $nan. 5거래일 분할매수 계획의 3일차."
-        }
-      ],
-      "stop_loss_price": 79.289998626709,
-      "stop_loss_triggered": false
-    }
-  },
-  "SSO": {
     "stage2": {
       "active": true,
       "days_done": 4
@@ -87,8 +54,8 @@
       "active": false,
       "days_done": 0
     },
-    "stage3_completed_before": false,
-    "last_processed_date": "2026-09-15",
+    "stage3_completed_before": true,
+    "last_processed_date": "2026-09-16",
     "last_status": {
       "alerts": [
         {
@@ -97,7 +64,34 @@
           "detail": "종가 $nan, 60일선 $nan. 5거래일 분할매수 계획의 4일차."
         }
       ],
-      "stop_loss_price": 62.09099807739258,
+      "stop_loss_price": 78.2639991760254,
+      "stop_loss_triggered": false
+    }
+  },
+  "SSO": {
+    "stage2": {
+      "active": false,
+      "days_done": 0
+    },
+    "stage3": {
+      "active": false,
+      "days_done": 0
+    },
+    "stage4": {
+      "active": false,
+      "days_done": 0
+    },
+    "stage3_completed_before": false,
+    "last_processed_date": "2026-09-16",
+    "last_status": {
+      "alerts": [
+        {
+          "stage": "stage2",
+          "headline": "60일선 매수 구간 5/5일차 — 남은 현금의 50% 분할매수",
+          "detail": "종가 $nan, 60일선 $nan. 5거래일 분할매수 계획의 5일차."
+        }
+      ],
+      "stop_loss_price": 61.54199752807617,
       "stop_loss_triggered": false
     }
   },
@@ -115,10 +109,10 @@
       "days_done": 0
     },
     "stage3_completed_before": true,
-    "last_processed_date": "2026-09-15",
+    "last_processed_date": "2026-09-16",
     "last_status": {
       "alerts": [],
-      "stop_loss_price": 62.342996978759764,
+      "stop_loss_price": 61.11000137329102,
       "stop_loss_triggered": false
     }
   },
@@ -136,17 +130,17 @@
       "days_done": 0
     },
     "stage3_completed_before": true,
-    "last_processed_date": "2026-09-15",
+    "last_processed_date": "2026-09-16",
     "last_status": {
       "alerts": [],
-      "stop_loss_price": 91.01699752807617,
+      "stop_loss_price": 92.0879997253418,
       "stop_loss_triggered": false
     }
   },
   "UPRO": {
     "stage2": {
-      "active": true,
-      "days_done": 4
+      "active": false,
+      "days_done": 0
     },
     "stage3": {
       "active": false,
@@ -157,23 +151,23 @@
       "days_done": 0
     },
     "stage3_completed_before": false,
-    "last_processed_date": "2026-09-15",
+    "last_processed_date": "2026-09-16",
     "last_status": {
       "alerts": [
         {
           "stage": "stage2",
-          "headline": "60일선 매수 구간 4/5일차 — 남은 현금의 50% 분할매수",
-          "detail": "종가 $nan, 60일선 $nan. 5거래일 분할매수 계획의 4일차."
+          "headline": "60일선 매수 구간 5/5일차 — 남은 현금의 50% 분할매수",
+          "detail": "종가 $nan, 60일선 $nan. 5거래일 분할매수 계획의 5일차."
         }
       ],
-      "stop_loss_price": 131.39100494384766,
+      "stop_loss_price": 129.57300109863283,
       "stop_loss_triggered": false
     }
   },
   "TSLA": {
     "stage2": {
-      "active": true,
-      "days_done": 4
+      "active": false,
+      "days_done": 0
     },
     "stage3": {
       "active": false,
@@ -184,16 +178,16 @@
       "days_done": 0
     },
     "stage3_completed_before": true,
-    "last_processed_date": "2026-09-15",
+    "last_processed_date": "2026-09-16",
     "last_status": {
       "alerts": [
         {
           "stage": "stage2",
-          "headline": "60일선 매수 구간 4/5일차 — 남은 현금의 50% 분할매수",
-          "detail": "종가 $nan, 60일선 $nan. 5거래일 분할매수 계획의 4일차."
+          "headline": "60일선 매수 구간 5/5일차 — 남은 현금의 50% 분할매수",
+          "detail": "종가 $nan, 60일선 $nan. 5거래일 분할매수 계획의 5일차."
         }
       ],
-      "stop_loss_price": 323.0730010986328,
+      "stop_loss_price": 320.9219879150391,
       "stop_loss_triggered": false
     }
   },
@@ -211,16 +205,10 @@
       "days_done": 0
     },
     "stage3_completed_before": false,
-    "last_processed_date": "2026-09-15",
+    "last_processed_date": "2026-09-16",
     "last_status": {
-      "alerts": [
-        {
-          "stage": "stage2",
-          "headline": "60일선 매수 구간 5/5일차 — 남은 현금의 50% 분할매수",
-          "detail": "종가 $nan, 60일선 $nan. 5거래일 분할매수 계획의 5일차."
-        }
-      ],
-      "stop_loss_price": 1.7640000343322755,
+      "alerts": [],
+      "stop_loss_price": 1.6650000214576721,
       "stop_loss_triggered": false
     }
   }
