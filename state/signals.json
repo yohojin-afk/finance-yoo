@@ -13,10 +13,10 @@
       "days_done": 0
     },
     "stage3_completed_before": false,
-    "last_processed_date": "2026-09-24",
+    "last_processed_date": "2026-09-25",
     "last_status": {
       "alerts": [],
-      "stop_loss_price": 303.3179901123047,
+      "stop_loss_price": 302.32801208496096,
       "stop_loss_triggered": false
     }
   },
@@ -34,10 +34,10 @@
       "days_done": 0
     },
     "stage3_completed_before": true,
-    "last_processed_date": "2026-09-24",
+    "last_processed_date": "2026-09-25",
     "last_status": {
       "alerts": [],
-      "stop_loss_price": 202.95899505615236,
+      "stop_loss_price": 202.12200164794922,
       "stop_loss_triggered": false
     }
   },
@@ -55,10 +55,10 @@
       "days_done": 0
     },
     "stage3_completed_before": true,
-    "last_processed_date": "2026-09-24",
+    "last_processed_date": "2026-09-25",
     "last_status": {
       "alerts": [],
-      "stop_loss_price": 86.54400329589843,
+      "stop_loss_price": 86.48999862670898,
       "stop_loss_triggered": false
     }
   },
@@ -76,16 +76,10 @@
       "days_done": 0
     },
     "stage3_completed_before": false,
-    "last_processed_date": "2026-09-24",
+    "last_processed_date": "2026-09-25",
     "last_status": {
-      "alerts": [
-        {
-          "stage": "stage2",
-          "headline": "60일선 매수 구간 5/5일차 — 남은 현금의 50% 분할매수",
-          "detail": "종가 $nan, 60일선 $nan. 5거래일 분할매수 계획의 5일차."
-        }
-      ],
-      "stop_loss_price": 63.34199752807617,
+      "alerts": [],
+      "stop_loss_price": 63.234001922607426,
       "stop_loss_triggered": false
     }
   },
@@ -103,10 +97,10 @@
       "days_done": 0
     },
     "stage3_completed_before": true,
-    "last_processed_date": "2026-09-24",
+    "last_processed_date": "2026-09-25",
     "last_status": {
       "alerts": [],
-      "stop_loss_price": 70.79400329589843,
+      "stop_loss_price": 70.72200164794923,
       "stop_loss_triggered": false
     }
   },
@@ -124,10 +118,10 @@
       "days_done": 0
     },
     "stage3_completed_before": true,
-    "last_processed_date": "2026-09-24",
+    "last_processed_date": "2026-09-25",
     "last_status": {
       "alerts": [],
-      "stop_loss_price": 131.625,
+      "stop_loss_price": 131.69700164794924,
       "stop_loss_triggered": false
     }
   },
@@ -145,10 +139,10 @@
       "days_done": 0
     },
     "stage3_completed_before": false,
-    "last_processed_date": "2026-09-24",
+    "last_processed_date": "2026-09-25",
     "last_status": {
       "alerts": [],
-      "stop_loss_price": 135.27000274658204,
+      "stop_loss_price": 134.99100494384766,
       "stop_loss_triggered": false
     }
   },
@@ -166,10 +160,10 @@
       "days_done": 0
     },
     "stage3_completed_before": true,
-    "last_processed_date": "2026-09-24",
+    "last_processed_date": "2026-09-25",
     "last_status": {
       "alerts": [],
-      "stop_loss_price": 342.1079956054688,
+      "stop_loss_price": 340.14600219726566,
       "stop_loss_triggered": false
     }
   },
@@ -187,10 +181,10 @@
       "days_done": 0
     },
     "stage3_completed_before": false,
-    "last_processed_date": "2026-09-24",
+    "last_processed_date": "2026-09-25",
     "last_status": {
       "alerts": [],
-      "stop_loss_price": 1.0529999613761902,
+      "stop_loss_price": 1.0214999914169312,
       "stop_loss_triggered": false
     }
   }
