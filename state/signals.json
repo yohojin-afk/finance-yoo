@@ -13,10 +13,10 @@
       "days_done": 0
     },
     "stage3_completed_before": false,
-    "last_processed_date": "2026-09-28",
+    "last_processed_date": "2026-09-29",
     "last_status": {
       "alerts": [],
-      "stop_loss_price": 306.9630065917969,
+      "stop_loss_price": 304.55999450683595,
       "stop_loss_triggered": false
     }
   },
@@ -34,10 +34,10 @@
       "days_done": 0
     },
     "stage3_completed_before": true,
-    "last_processed_date": "2026-09-28",
+    "last_processed_date": "2026-09-29",
     "last_status": {
       "alerts": [],
-      "stop_loss_price": 202.5630065917969,
+      "stop_loss_price": 205.9740005493164,
       "stop_loss_triggered": false
     }
   },
@@ -55,10 +55,10 @@
       "days_done": 0
     },
     "stage3_completed_before": true,
-    "last_processed_date": "2026-09-28",
+    "last_processed_date": "2026-09-29",
     "last_status": {
       "alerts": [],
-      "stop_loss_price": 87.25499725341797,
+      "stop_loss_price": 85.38300247192383,
       "stop_loss_triggered": false
     }
   },
@@ -76,16 +76,10 @@
       "days_done": 0
     },
     "stage3_completed_before": false,
-    "last_processed_date": "2026-09-28",
+    "last_processed_date": "2026-09-29",
     "last_status": {
-      "alerts": [
-        {
-          "stage": "stage1",
-          "headline": "20일선 터치 — 가용 현금의 10% 매수",
-          "detail": "종가 $69.89, 20일선 $69.88 부근 도달."
-        }
-      ],
-      "stop_loss_price": 63.88200302124024,
+      "alerts": [],
+      "stop_loss_price": 62.90099945068359,
       "stop_loss_triggered": false
     }
   },
@@ -103,10 +97,10 @@
       "days_done": 0
     },
     "stage3_completed_before": true,
-    "last_processed_date": "2026-09-28",
+    "last_processed_date": "2026-09-29",
     "last_status": {
       "alerts": [],
-      "stop_loss_price": 71.63999862670899,
+      "stop_loss_price": 69.33600082397462,
       "stop_loss_triggered": false
     }
   },
@@ -124,10 +118,10 @@
       "days_done": 0
     },
     "stage3_completed_before": true,
-    "last_processed_date": "2026-09-28",
+    "last_processed_date": "2026-09-29",
     "last_status": {
       "alerts": [],
-      "stop_loss_price": 136.30499725341798,
+      "stop_loss_price": 128.06099395751954,
       "stop_loss_triggered": false
     }
   },
@@ -145,16 +139,10 @@
       "days_done": 0
     },
     "stage3_completed_before": false,
-    "last_processed_date": "2026-09-28",
+    "last_processed_date": "2026-09-29",
     "last_status": {
-      "alerts": [
-        {
-          "stage": "stage1",
-          "headline": "20일선 터치 — 가용 현금의 10% 매수",
-          "detail": "종가 $148.75, 20일선 $148.83 부근 도달."
-        }
-      ],
-      "stop_loss_price": 136.97999725341796,
+      "alerts": [],
+      "stop_loss_price": 133.875,
       "stop_loss_triggered": false
     }
   },
@@ -172,16 +160,10 @@
       "days_done": 0
     },
     "stage3_completed_before": true,
-    "last_processed_date": "2026-09-28",
+    "last_processed_date": "2026-09-29",
     "last_status": {
-      "alerts": [
-        {
-          "stage": "stage1",
-          "headline": "20일선 터치 — 가용 현금의 10% 매수",
-          "detail": "종가 $357.45, 20일선 $366.12 부근 도달."
-        }
-      ],
-      "stop_loss_price": 334.89898681640625,
+      "alerts": [],
+      "stop_loss_price": 321.70501098632815,
       "stop_loss_triggered": false
     }
   },
@@ -199,10 +181,10 @@
       "days_done": 0
     },
     "stage3_completed_before": false,
-    "last_processed_date": "2026-09-28",
+    "last_processed_date": "2026-09-29",
     "last_status": {
       "alerts": [],
-      "stop_loss_price": 1.0169999957084657,
+      "stop_loss_price": 0.9990000128746033,
       "stop_loss_triggered": false
     }
   }
