@@ -13,10 +13,10 @@
       "days_done": 0
     },
     "stage3_completed_before": false,
-    "last_processed_date": "2026-10-01",
+    "last_processed_date": "2026-10-02",
     "last_status": {
       "alerts": [],
-      "stop_loss_price": 299.7179901123047,
+      "stop_loss_price": 297.2880065917969,
       "stop_loss_triggered": false
     }
   },
@@ -34,10 +34,10 @@
       "days_done": 0
     },
     "stage3_completed_before": true,
-    "last_processed_date": "2026-10-01",
+    "last_processed_date": "2026-10-02",
     "last_status": {
       "alerts": [],
-      "stop_loss_price": 205.54200439453126,
+      "stop_loss_price": 207.7740005493164,
       "stop_loss_triggered": false
     }
   },
@@ -55,10 +55,10 @@
       "days_done": 0
     },
     "stage3_completed_before": true,
-    "last_processed_date": "2026-10-01",
+    "last_processed_date": "2026-10-02",
     "last_status": {
       "alerts": [],
-      "stop_loss_price": 86.08500137329102,
+      "stop_loss_price": 86.61599807739258,
       "stop_loss_triggered": false
     }
   },
@@ -76,10 +76,10 @@
       "days_done": 0
     },
     "stage3_completed_before": false,
-    "last_processed_date": "2026-10-01",
+    "last_processed_date": "2026-10-02",
     "last_status": {
       "alerts": [],
-      "stop_loss_price": 62.39700164794922,
+      "stop_loss_price": 62.63099670410156,
       "stop_loss_triggered": false
     }
   },
@@ -97,10 +97,10 @@
       "days_done": 0
     },
     "stage3_completed_before": true,
-    "last_processed_date": "2026-10-01",
+    "last_processed_date": "2026-10-02",
     "last_status": {
       "alerts": [],
-      "stop_loss_price": 70.2269989013672,
+      "stop_loss_price": 70.85700302124023,
       "stop_loss_triggered": false
     }
   },
@@ -118,10 +118,10 @@
       "days_done": 0
     },
     "stage3_completed_before": true,
-    "last_processed_date": "2026-10-01",
+    "last_processed_date": "2026-10-02",
     "last_status": {
       "alerts": [],
-      "stop_loss_price": 133.07400054931642,
+      "stop_loss_price": 138.32100219726564,
       "stop_loss_triggered": false
     }
   },
@@ -139,10 +139,10 @@
       "days_done": 0
     },
     "stage3_completed_before": false,
-    "last_processed_date": "2026-10-01",
+    "last_processed_date": "2026-10-02",
     "last_status": {
       "alerts": [],
-      "stop_loss_price": 132.27300109863282,
+      "stop_loss_price": 132.975,
       "stop_loss_triggered": false
     }
   },
@@ -160,10 +160,10 @@
       "days_done": 0
     },
     "stage3_completed_before": true,
-    "last_processed_date": "2026-10-01",
+    "last_processed_date": "2026-10-02",
     "last_status": {
       "alerts": [],
-      "stop_loss_price": 319.32899780273436,
+      "stop_loss_price": 318.69898681640626,
       "stop_loss_triggered": false
     }
   },
@@ -181,10 +181,10 @@
       "days_done": 0
     },
     "stage3_completed_before": false,
-    "last_processed_date": "2026-10-01",
+    "last_processed_date": "2026-10-02",
     "last_status": {
       "alerts": [],
-      "stop_loss_price": 0.9359999656677246,
+      "stop_loss_price": 0.8109000205993653,
       "stop_loss_triggered": false
     }
   }
