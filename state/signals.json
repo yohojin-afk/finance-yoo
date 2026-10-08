@@ -13,10 +13,10 @@
       "days_done": 0
     },
     "stage3_completed_before": false,
-    "last_processed_date": "2026-10-06",
+    "last_processed_date": "2026-10-07",
     "last_status": {
       "alerts": [],
-      "stop_loss_price": 299.60101318359375,
+      "stop_loss_price": 300.2670043945313,
       "stop_loss_triggered": false
     }
   },
@@ -34,10 +34,10 @@
       "days_done": 0
     },
     "stage3_completed_before": true,
-    "last_processed_date": "2026-10-06",
+    "last_processed_date": "2026-10-07",
     "last_status": {
       "alerts": [],
-      "stop_loss_price": 215.00999450683594,
+      "stop_loss_price": 215.31600494384767,
       "stop_loss_triggered": false
     }
   },
@@ -55,10 +55,10 @@
       "days_done": 0
     },
     "stage3_completed_before": true,
-    "last_processed_date": "2026-10-06",
+    "last_processed_date": "2026-10-07",
     "last_status": {
       "alerts": [],
-      "stop_loss_price": 89.85599670410157,
+      "stop_loss_price": 90.69299697875977,
       "stop_loss_triggered": false
     }
   },
@@ -76,10 +76,10 @@
       "days_done": 0
     },
     "stage3_completed_before": false,
-    "last_processed_date": "2026-10-06",
+    "last_processed_date": "2026-10-07",
     "last_status": {
       "alerts": [],
-      "stop_loss_price": 64.37699890136719,
+      "stop_loss_price": 65.07000274658203,
       "stop_loss_triggered": false
     }
   },
@@ -97,10 +97,10 @@
       "days_done": 0
     },
     "stage3_completed_before": true,
-    "last_processed_date": "2026-10-06",
+    "last_processed_date": "2026-10-07",
     "last_status": {
       "alerts": [],
-      "stop_loss_price": 74.80800247192383,
+      "stop_loss_price": 75.825,
       "stop_loss_triggered": false
     }
   },
@@ -111,23 +111,23 @@
     },
     "stage3": {
       "active": true,
-      "days_done": 2
+      "days_done": 3
     },
     "stage4": {
       "active": false,
       "days_done": 0
     },
     "stage3_completed_before": true,
-    "last_processed_date": "2026-10-06",
+    "last_processed_date": "2026-10-07",
     "last_status": {
       "alerts": [
         {
           "stage": "stage3",
-          "headline": "120일선 매수 구간 2/5일차 — 남은 현금의 50% 분할매수",
-          "detail": "종가 $164.26, 120일선 $159.55. 5거래일 분할매수 계획의 2일차."
+          "headline": "120일선 매수 구간 3/5일차 — 남은 현금의 50% 분할매수",
+          "detail": "종가 $158.91, 120일선 $160.14. 5거래일 분할매수 계획의 3일차."
         }
       ],
-      "stop_loss_price": 147.84300384521484,
+      "stop_loss_price": 147.83399505615236,
       "stop_loss_triggered": false
     }
   },
@@ -145,10 +145,10 @@
       "days_done": 0
     },
     "stage3_completed_before": false,
-    "last_processed_date": "2026-10-06",
+    "last_processed_date": "2026-10-07",
     "last_status": {
       "alerts": [],
-      "stop_loss_price": 138.5009994506836,
+      "stop_loss_price": 140.76900329589844,
       "stop_loss_triggered": false
     }
   },
@@ -159,23 +159,23 @@
     },
     "stage3": {
       "active": true,
-      "days_done": 2
+      "days_done": 3
     },
     "stage4": {
       "active": false,
       "days_done": 0
     },
     "stage3_completed_before": true,
-    "last_processed_date": "2026-10-06",
+    "last_processed_date": "2026-10-07",
     "last_status": {
       "alerts": [
         {
           "stage": "stage3",
-          "headline": "120일선 매수 구간 2/5일차 — 남은 현금의 50% 분할매수",
-          "detail": "종가 $380.68, 120일선 $378.82. 5거래일 분할매수 계획의 2일차."
+          "headline": "120일선 매수 구간 3/5일차 — 남은 현금의 50% 분할매수",
+          "detail": "종가 $377.81, 120일선 $378.73. 5거래일 분할매수 계획의 3일차."
         }
       ],
-      "stop_loss_price": 340.8570098876953,
+      "stop_loss_price": 342.61199340820315,
       "stop_loss_triggered": false
     }
   },
@@ -193,10 +193,10 @@
       "days_done": 0
     },
     "stage3_completed_before": false,
-    "last_processed_date": "2026-10-06",
+    "last_processed_date": "2026-10-07",
     "last_status": {
       "alerts": [],
-      "stop_loss_price": 0.8649000227451324,
+      "stop_loss_price": 0.8982000231742859,
       "stop_loss_triggered": false
     }
   }
