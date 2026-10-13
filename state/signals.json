@@ -13,16 +13,10 @@
       "days_done": 0
     },
     "stage3_completed_before": false,
-    "last_processed_date": "2026-10-09",
+    "last_processed_date": "2026-10-12",
     "last_status": {
-      "alerts": [
-        {
-          "stage": "stage1",
-          "headline": "20일선 터치 — 가용 현금의 10% 매수",
-          "detail": "종가 $336.64, 20일선 $335.39 부근 도달."
-        }
-      ],
-      "stop_loss_price": 306.378012084961,
+      "alerts": [],
+      "stop_loss_price": 302.97601318359375,
       "stop_loss_triggered": false
     }
   },
@@ -40,10 +34,16 @@
       "days_done": 0
     },
     "stage3_completed_before": true,
-    "last_processed_date": "2026-10-09",
+    "last_processed_date": "2026-10-12",
     "last_status": {
-      "alerts": [],
-      "stop_loss_price": 207.43199615478517,
+      "alerts": [
+        {
+          "stage": "stage1",
+          "headline": "20일선 터치 — 가용 현금의 10% 매수",
+          "detail": "종가 $226.32, 20일선 $227.50 부근 도달."
+        }
+      ],
+      "stop_loss_price": 206.35199890136718,
       "stop_loss_triggered": false
     }
   },
@@ -61,10 +61,10 @@
       "days_done": 0
     },
     "stage3_completed_before": true,
-    "last_processed_date": "2026-10-09",
+    "last_processed_date": "2026-10-12",
     "last_status": {
       "alerts": [],
-      "stop_loss_price": 87.78600082397462,
+      "stop_loss_price": 88.57799835205078,
       "stop_loss_triggered": false
     }
   },
@@ -82,10 +82,10 @@
       "days_done": 0
     },
     "stage3_completed_before": false,
-    "last_processed_date": "2026-10-09",
+    "last_processed_date": "2026-10-12",
     "last_status": {
       "alerts": [],
-      "stop_loss_price": 64.16100082397462,
+      "stop_loss_price": 64.90800247192384,
       "stop_loss_triggered": false
     }
   },
@@ -103,17 +103,17 @@
       "days_done": 0
     },
     "stage3_completed_before": true,
-    "last_processed_date": "2026-10-09",
+    "last_processed_date": "2026-10-12",
     "last_status": {
       "alerts": [],
-      "stop_loss_price": 72.20700302124024,
+      "stop_loss_price": 73.1519989013672,
       "stop_loss_triggered": false
     }
   },
   "SOXL": {
     "stage2": {
-      "active": false,
-      "days_done": 0
+      "active": true,
+      "days_done": 1
     },
     "stage3": {
       "active": false,
@@ -124,16 +124,16 @@
       "days_done": 0
     },
     "stage3_completed_before": true,
-    "last_processed_date": "2026-10-09",
+    "last_processed_date": "2026-10-12",
     "last_status": {
       "alerts": [
         {
-          "stage": "stage3",
-          "headline": "120일선 매수 구간 5/5일차 — 남은 현금의 50% 분할매수",
-          "detail": "종가 $139.76, 120일선 $160.91. 5거래일 분할매수 계획의 5일차."
+          "stage": "stage2",
+          "headline": "60일선 매수 구간 1/5일차 — 남은 현금의 50% 분할매수",
+          "detail": "종가 $128.40, 60일선 $131.01. 5거래일 분할매수 계획의 1일차."
         }
       ],
-      "stop_loss_price": 128.26800384521485,
+      "stop_loss_price": 125.78399505615235,
       "stop_loss_triggered": false
     }
   },
@@ -151,10 +151,10 @@
       "days_done": 0
     },
     "stage3_completed_before": false,
-    "last_processed_date": "2026-10-09",
+    "last_processed_date": "2026-10-12",
     "last_status": {
       "alerts": [],
-      "stop_loss_price": 137.81700439453127,
+      "stop_loss_price": 140.14800109863282,
       "stop_loss_triggered": false
     }
   },
@@ -164,24 +164,24 @@
       "days_done": 0
     },
     "stage3": {
-      "active": false,
-      "days_done": 0
+      "active": true,
+      "days_done": 1
     },
     "stage4": {
       "active": false,
       "days_done": 0
     },
     "stage3_completed_before": true,
-    "last_processed_date": "2026-10-09",
+    "last_processed_date": "2026-10-12",
     "last_status": {
       "alerts": [
         {
           "stage": "stage3",
-          "headline": "120일선 매수 구간 5/5일차 — 남은 현금의 50% 분할매수",
-          "detail": "종가 $382.70, 120일선 $378.43. 5거래일 분할매수 계획의 5일차."
+          "headline": "120일선 매수 구간 1/5일차 — 남은 현금의 50% 분할매수",
+          "detail": "종가 $378.03, 120일선 $378.36. 5거래일 분할매수 계획의 1일차."
         }
       ],
-      "stop_loss_price": 337.5,
+      "stop_loss_price": 344.4300109863281,
       "stop_loss_triggered": false
     }
   },
@@ -199,10 +199,10 @@
       "days_done": 0
     },
     "stage3_completed_before": false,
-    "last_processed_date": "2026-10-09",
+    "last_processed_date": "2026-10-12",
     "last_status": {
       "alerts": [],
-      "stop_loss_price": 0.8846999824047089,
+      "stop_loss_price": 0.89369997382164,
       "stop_loss_triggered": false
     }
   }
