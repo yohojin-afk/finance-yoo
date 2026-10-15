@@ -13,10 +13,10 @@
       "days_done": 0
     },
     "stage3_completed_before": false,
-    "last_processed_date": "2026-10-13",
+    "last_processed_date": "2026-10-14",
     "last_status": {
       "alerts": [],
-      "stop_loss_price": 306.8730010986328,
+      "stop_loss_price": 307.1429901123047,
       "stop_loss_triggered": false
     }
   },
@@ -34,10 +34,10 @@
       "days_done": 0
     },
     "stage3_completed_before": true,
-    "last_processed_date": "2026-10-13",
+    "last_processed_date": "2026-10-14",
     "last_status": {
       "alerts": [],
-      "stop_loss_price": 203.6880065917969,
+      "stop_loss_price": 205.66800384521486,
       "stop_loss_triggered": false
     }
   },
@@ -55,10 +55,10 @@
       "days_done": 0
     },
     "stage3_completed_before": true,
-    "last_processed_date": "2026-10-13",
+    "last_processed_date": "2026-10-14",
     "last_status": {
       "alerts": [],
-      "stop_loss_price": 87.37200164794922,
+      "stop_loss_price": 86.79600219726562,
       "stop_loss_triggered": false
     }
   },
@@ -76,10 +76,10 @@
       "days_done": 0
     },
     "stage3_completed_before": false,
-    "last_processed_date": "2026-10-13",
+    "last_processed_date": "2026-10-14",
     "last_status": {
       "alerts": [],
-      "stop_loss_price": 64.83600082397462,
+      "stop_loss_price": 64.82699890136719,
       "stop_loss_triggered": false
     }
   },
@@ -97,17 +97,17 @@
       "days_done": 0
     },
     "stage3_completed_before": true,
-    "last_processed_date": "2026-10-13",
+    "last_processed_date": "2026-10-14",
     "last_status": {
       "alerts": [],
-      "stop_loss_price": 71.64900054931641,
+      "stop_loss_price": 70.92899780273437,
       "stop_loss_triggered": false
     }
   },
   "SOXL": {
     "stage2": {
       "active": true,
-      "days_done": 2
+      "days_done": 3
     },
     "stage3": {
       "active": false,
@@ -118,16 +118,16 @@
       "days_done": 0
     },
     "stage3_completed_before": true,
-    "last_processed_date": "2026-10-13",
+    "last_processed_date": "2026-10-14",
     "last_status": {
       "alerts": [
         {
           "stage": "stage2",
-          "headline": "60일선 매수 구간 2/5일차 — 남은 현금의 50% 분할매수",
-          "detail": "종가 $nan, 60일선 $nan. 5거래일 분할매수 계획의 2일차."
+          "headline": "60일선 매수 구간 3/5일차 — 남은 현금의 50% 분할매수",
+          "detail": "종가 $nan, 60일선 $nan. 5거래일 분할매수 계획의 3일차."
         }
       ],
-      "stop_loss_price": 115.55999450683593,
+      "stop_loss_price": 114.8129997253418,
       "stop_loss_triggered": false
     }
   },
@@ -145,10 +145,10 @@
       "days_done": 0
     },
     "stage3_completed_before": false,
-    "last_processed_date": "2026-10-13",
+    "last_processed_date": "2026-10-14",
     "last_status": {
       "alerts": [],
-      "stop_loss_price": 139.91400604248048,
+      "stop_loss_price": 139.85999450683593,
       "stop_loss_triggered": false
     }
   },
@@ -159,23 +159,23 @@
     },
     "stage3": {
       "active": true,
-      "days_done": 2
+      "days_done": 3
     },
     "stage4": {
       "active": false,
       "days_done": 0
     },
     "stage3_completed_before": true,
-    "last_processed_date": "2026-10-13",
+    "last_processed_date": "2026-10-14",
     "last_status": {
       "alerts": [
         {
           "stage": "stage3",
-          "headline": "120일선 매수 구간 2/5일차 — 남은 현금의 50% 분할매수",
-          "detail": "종가 $nan, 120일선 $nan. 5거래일 분할매수 계획의 2일차."
+          "headline": "120일선 매수 구간 3/5일차 — 남은 현금의 50% 분할매수",
+          "detail": "종가 $nan, 120일선 $nan. 5거래일 분할매수 계획의 3일차."
         }
       ],
-      "stop_loss_price": 340.2269989013672,
+      "stop_loss_price": 337.70700988769534,
       "stop_loss_triggered": false
     }
   },
@@ -193,10 +193,10 @@
       "days_done": 0
     },
     "stage3_completed_before": false,
-    "last_processed_date": "2026-10-13",
+    "last_processed_date": "2026-10-14",
     "last_status": {
       "alerts": [],
-      "stop_loss_price": 0.8442000210285187,
+      "stop_loss_price": 0.7712999939918518,
       "stop_loss_triggered": false
     }
   }
