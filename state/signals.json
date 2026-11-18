@@ -13,10 +13,10 @@
       "days_done": 0
     },
     "stage3_completed_before": false,
-    "last_processed_date": "2026-11-16",
+    "last_processed_date": "2026-11-17",
     "last_status": {
       "alerts": [],
-      "stop_loss_price": 320.6429901123047,
+      "stop_loss_price": 317.5019989013672,
       "stop_loss_triggered": false
     }
   },
@@ -31,19 +31,19 @@
     },
     "stage4": {
       "active": true,
-      "days_done": 6
+      "days_done": 7
     },
     "stage3_completed_before": true,
-    "last_processed_date": "2026-11-16",
+    "last_processed_date": "2026-11-17",
     "last_status": {
       "alerts": [
         {
           "stage": "stage4",
-          "headline": "120선 아래 RSI 과매도 매수 구간 6/40일차 — 남은 현금 100% 분할매수",
-          "detail": "종가 $156.14, RSI14 22.7. 최대 40거래일 분할매수 계획의 6일차."
+          "headline": "120선 아래 RSI 과매도 매수 구간 7/40일차 — 남은 현금 100% 분할매수",
+          "detail": "종가 $155.46, RSI14 22.5. 최대 40거래일 분할매수 계획의 7일차."
         }
       ],
-      "stop_loss_price": 146.56500549316408,
+      "stop_loss_price": 140.5259994506836,
       "stop_loss_triggered": false
     }
   },
@@ -61,10 +61,10 @@
       "days_done": 0
     },
     "stage3_completed_before": true,
-    "last_processed_date": "2026-11-16",
+    "last_processed_date": "2026-11-17",
     "last_status": {
       "alerts": [],
-      "stop_loss_price": 71.37000274658203,
+      "stop_loss_price": 67.57200164794922,
       "stop_loss_triggered": false
     }
   },
@@ -82,10 +82,10 @@
       "days_done": 0
     },
     "stage3_completed_before": true,
-    "last_processed_date": "2026-11-16",
+    "last_processed_date": "2026-11-17",
     "last_status": {
       "alerts": [],
-      "stop_loss_price": 60.34500274658203,
+      "stop_loss_price": 58.07699890136719,
       "stop_loss_triggered": false
     }
   },
@@ -103,10 +103,10 @@
       "days_done": 0
     },
     "stage3_completed_before": true,
-    "last_processed_date": "2026-11-16",
+    "last_processed_date": "2026-11-17",
     "last_status": {
       "alerts": [],
-      "stop_loss_price": 51.912000274658205,
+      "stop_loss_price": 47.72699890136719,
       "stop_loss_triggered": false
     }
   },
@@ -124,17 +124,11 @@
       "days_done": 0
     },
     "stage3_completed_before": true,
-    "last_processed_date": "2026-11-16",
+    "last_processed_date": "2026-11-17",
     "last_status": {
-      "alerts": [
-        {
-          "stage": "stop_loss",
-          "headline": "손절 신호 — 전일 대비 -10% 이상 하락",
-          "detail": "전일 종가 $58.32 → 오늘 종가 $48.76 (-16.4%)."
-        }
-      ],
-      "stop_loss_price": 52.4879997253418,
-      "stop_loss_triggered": true
+      "alerts": [],
+      "stop_loss_price": 43.883998489379884,
+      "stop_loss_triggered": false
     }
   },
   "UPRO": {
@@ -151,10 +145,10 @@
       "days_done": 0
     },
     "stage3_completed_before": false,
-    "last_processed_date": "2026-11-16",
+    "last_processed_date": "2026-11-17",
     "last_status": {
       "alerts": [],
-      "stop_loss_price": 124.65,
+      "stop_loss_price": 117.61199340820313,
       "stop_loss_triggered": false
     }
   },
@@ -172,16 +166,10 @@
       "days_done": 0
     },
     "stage3_completed_before": true,
-    "last_processed_date": "2026-11-16",
+    "last_processed_date": "2026-11-17",
     "last_status": {
-      "alerts": [
-        {
-          "stage": "stage1",
-          "headline": "20일선 터치 — 가용 현금의 10% 매수",
-          "detail": "종가 $379.74, 20일선 $385.94 부근 도달."
-        }
-      ],
-      "stop_loss_price": 351.1980010986328,
+      "alerts": [],
+      "stop_loss_price": 341.7659912109375,
       "stop_loss_triggered": false
     }
   },
@@ -199,17 +187,11 @@
       "days_done": 0
     },
     "stage3_completed_before": false,
-    "last_processed_date": "2026-11-16",
+    "last_processed_date": "2026-11-17",
     "last_status": {
-      "alerts": [
-        {
-          "stage": "stop_loss",
-          "headline": "손절 신호 — 전일 대비 -10% 이상 하락",
-          "detail": "전일 종가 $0.77 → 오늘 종가 $0.66 (-14.5%)."
-        }
-      ],
-      "stop_loss_price": 0.6965999901294708,
-      "stop_loss_triggered": true
+      "alerts": [],
+      "stop_loss_price": 0.5958000004291535,
+      "stop_loss_triggered": false
     }
   }
 }
