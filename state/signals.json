@@ -13,10 +13,10 @@
       "days_done": 0
     },
     "stage3_completed_before": false,
-    "last_processed_date": "2026-11-25",
+    "last_processed_date": "2026-11-27",
     "last_status": {
       "alerts": [],
-      "stop_loss_price": 318.6630065917969,
+      "stop_loss_price": 320.02198791503906,
       "stop_loss_triggered": false
     }
   },
@@ -31,19 +31,19 @@
     },
     "stage4": {
       "active": true,
-      "days_done": 13
+      "days_done": 14
     },
     "stage3_completed_before": true,
-    "last_processed_date": "2026-11-25",
+    "last_processed_date": "2026-11-27",
     "last_status": {
       "alerts": [
         {
           "stage": "stage4",
-          "headline": "120선 아래 RSI 과매도 매수 구간 13/40일차 — 남은 현금 100% 분할매수",
-          "detail": "종가 $149.30, RSI14 37.5. 최대 40거래일 분할매수 계획의 13일차."
+          "headline": "120선 아래 RSI 과매도 매수 구간 14/40일차 — 남은 현금 100% 분할매수",
+          "detail": "종가 $150.49, RSI14 38.1. 최대 40거래일 분할매수 계획의 14일차."
         }
       ],
-      "stop_loss_price": 139.84200439453124,
+      "stop_loss_price": 134.37000274658203,
       "stop_loss_triggered": false
     }
   },
@@ -58,19 +58,19 @@
     },
     "stage4": {
       "active": true,
-      "days_done": 4
+      "days_done": 5
     },
     "stage3_completed_before": true,
-    "last_processed_date": "2026-11-25",
+    "last_processed_date": "2026-11-27",
     "last_status": {
       "alerts": [
         {
           "stage": "stage4",
-          "headline": "120선 아래 RSI 과매도 매수 구간 4/40일차 — 남은 현금 100% 분할매수",
-          "detail": "종가 $68.15, RSI14 36.9. 최대 40거래일 분할매수 계획의 4일차."
+          "headline": "120선 아래 RSI 과매도 매수 구간 5/40일차 — 남은 현금 100% 분할매수",
+          "detail": "종가 $71.75, RSI14 42.2. 최대 40거래일 분할매수 계획의 5일차."
         }
       ],
-      "stop_loss_price": 62.1629997253418,
+      "stop_loss_price": 61.335001373291014,
       "stop_loss_triggered": false
     }
   },
@@ -85,19 +85,19 @@
     },
     "stage4": {
       "active": true,
-      "days_done": 4
+      "days_done": 5
     },
     "stage3_completed_before": true,
-    "last_processed_date": "2026-11-25",
+    "last_processed_date": "2026-11-27",
     "last_status": {
       "alerts": [
         {
           "stage": "stage4",
-          "headline": "120선 아래 RSI 과매도 매수 구간 4/40일차 — 남은 현금 100% 분할매수",
-          "detail": "종가 $60.18, RSI14 38.5. 최대 40거래일 분할매수 계획의 4일차."
+          "headline": "120선 아래 RSI 과매도 매수 구간 5/40일차 — 남은 현금 100% 분할매수",
+          "detail": "종가 $62.15, RSI14 43.8. 최대 40거래일 분할매수 계획의 5일차."
         }
       ],
-      "stop_loss_price": 54.49499931335449,
+      "stop_loss_price": 54.162000274658205,
       "stop_loss_triggered": false
     }
   },
@@ -112,19 +112,19 @@
     },
     "stage4": {
       "active": true,
-      "days_done": 4
+      "days_done": 5
     },
     "stage3_completed_before": true,
-    "last_processed_date": "2026-11-25",
+    "last_processed_date": "2026-11-27",
     "last_status": {
       "alerts": [
         {
           "stage": "stage4",
-          "headline": "120선 아래 RSI 과매도 매수 구간 4/40일차 — 남은 현금 100% 분할매수",
-          "detail": "종가 $45.28, RSI14 35.6. 최대 40거래일 분할매수 계획의 4일차."
+          "headline": "120선 아래 RSI 과매도 매수 구간 5/40일차 — 남은 현금 100% 분할매수",
+          "detail": "종가 $48.85, RSI14 40.7. 최대 40거래일 분할매수 계획의 5일차."
         }
       ],
-      "stop_loss_price": 41.57099876403809,
+      "stop_loss_price": 40.75199890136719,
       "stop_loss_triggered": false
     }
   },
@@ -139,19 +139,19 @@
     },
     "stage4": {
       "active": true,
-      "days_done": 4
+      "days_done": 5
     },
     "stage3_completed_before": true,
-    "last_processed_date": "2026-11-25",
+    "last_processed_date": "2026-11-27",
     "last_status": {
       "alerts": [
         {
           "stage": "stage4",
-          "headline": "120선 아래 RSI 과매도 매수 구간 4/40일차 — 남은 현금 100% 분할매수",
-          "detail": "종가 $32.02, RSI14 33.0. 최대 40거래일 분할매수 계획의 4일차."
+          "headline": "120선 아래 RSI 과매도 매수 구간 5/40일차 — 남은 현금 100% 분할매수",
+          "detail": "종가 $36.57, RSI14 36.0. 최대 40거래일 분할매수 계획의 5일차."
         }
       ],
-      "stop_loss_price": 29.339998626708987,
+      "stop_loss_price": 28.818000411987306,
       "stop_loss_triggered": false
     }
   },
@@ -169,10 +169,10 @@
       "days_done": 0
     },
     "stage3_completed_before": false,
-    "last_processed_date": "2026-11-25",
+    "last_processed_date": "2026-11-27",
     "last_status": {
       "alerts": [],
-      "stop_loss_price": 106.12799835205078,
+      "stop_loss_price": 105.12000274658203,
       "stop_loss_triggered": false
     }
   },
@@ -190,21 +190,10 @@
       "days_done": 0
     },
     "stage3_completed_before": true,
-    "last_processed_date": "2026-11-25",
+    "last_processed_date": "2026-11-27",
     "last_status": {
-      "alerts": [
-        {
-          "stage": "stage2",
-          "headline": "60일선 매수 구간 5/5일차 — 남은 현금의 50% 분할매수",
-          "detail": "종가 $380.14, 60일선 $374.74. 5거래일 분할매수 계획의 5일차."
-        },
-        {
-          "stage": "stage3",
-          "headline": "120일선 매수 구간 5/5일차 — 남은 현금의 50% 분할매수",
-          "detail": "종가 $380.14, 120일선 $370.31. 5거래일 분할매수 계획의 5일차."
-        }
-      ],
-      "stop_loss_price": 346.2119934082031,
+      "alerts": [],
+      "stop_loss_price": 342.1260131835938,
       "stop_loss_triggered": false
     }
   },
@@ -222,10 +211,10 @@
       "days_done": 0
     },
     "stage3_completed_before": false,
-    "last_processed_date": "2026-11-25",
+    "last_processed_date": "2026-11-27",
     "last_status": {
       "alerts": [],
-      "stop_loss_price": 0.6560999751091003,
+      "stop_loss_price": 0.6660000085830688,
       "stop_loss_triggered": false
     }
   }
